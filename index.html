@@ -1,0 +1,1319 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Horizons d'Avenir - Opportunités pour Réfugiés en France</title>
+    <meta name="description" content="Plateforme de formation et d'emploi pour réfugiés et migrants en France. Conforme au droit français et européen.">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --p: #1a237e;
+            --pd: #0d1b6e;
+            --pl: #283593;
+            --a: #ff6f00;
+            --al: #ff8f00;
+            --s: #2e7d32;
+            --sl: #43a047;
+            --d: #c62828;
+            --dl: #e53935;
+            --w: #f57c00;
+            --wl: #ff9800;
+            --bg: #f5f7fa;
+            --wht: #ffffff;
+            --tx: #212121;
+            --t2: #616161;
+            --bdr: #e0e0e0;
+            --sh: 0 2px 10px rgba(0, 0, 0, .08);
+            --shl: 0 8px 30px rgba(0, 0, 0, .12);
+            --r: 12px;
+            --rr: 28px;
+            --t: .25s ease;
+            --f: 'Segoe UI', system-ui, sans-serif;
+        }
+
+        *,
+        ::before,
+        ::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+        }
+
+        body {
+            font-family: var(--f);
+            color: var(--tx);
+            background: var(--bg);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            line-height: 1.6;
+        }
+
+        body.rtl {
+            direction: rtl;
+        }
+
+        .disclaimer-bar {
+            background: linear-gradient(135deg, #fff3e0, #ffe0b2);
+            padding: .5rem 1rem;
+            text-align: center;
+            font-size: .75rem;
+            color: #e65100;
+            border-bottom: 2px solid var(--w);
+            position: sticky;
+            top: 0;
+            z-index: 101;
+        }
+
+        .disclaimer-bar i {
+            color: var(--w);
+            margin-right: .5rem;
+        }
+
+        .disclaimer-text-fr {
+            font-weight: 700;
+            color: #d32f2f;
+        }
+
+        .disclaimer-text-en,
+        .disclaimer-text-ar {
+            display: block;
+            font-size: .7rem;
+        }
+
+        .navbar {
+            background: var(--wht);
+            padding: 0 1.5rem;
+            box-shadow: var(--sh);
+            position: sticky;
+            top: 48px;
+            z-index: 100;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 60px;
+        }
+
+        .nav-brand {
+            display: flex;
+            align-items: center;
+            gap: .5rem;
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--p);
+            text-decoration: none;
+        }
+
+        .nav-brand i {
+            color: var(--a);
+            font-size: 1.5rem;
+        }
+
+        .nav-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--p);
+        }
+
+        .nav-menu {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: .25rem;
+        }
+
+        .nav-links a {
+            padding: .5rem .8rem;
+            border-radius: var(--rr);
+            color: var(--tx);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: .85rem;
+            transition: var(--t);
+            cursor: pointer;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            background: #e3f2fd;
+            color: var(--p);
+        }
+
+        .nav-actions {
+            display: flex;
+            gap: .5rem;
+            align-items: center;
+        }
+
+        .nav-actions select {
+            padding: .35rem .5rem;
+            border: 2px solid var(--bdr);
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: .8rem;
+            cursor: pointer;
+            background: var(--wht);
+        }
+
+        .btn {
+            padding: .55rem 1.2rem;
+            border-radius: var(--rr);
+            font-weight: 600;
+            font-size: .85rem;
+            cursor: pointer;
+            transition: var(--t);
+            border: 2px solid transparent;
+            display: inline-flex;
+            align-items: center;
+            gap: .4rem;
+            text-decoration: none;
+        }
+
+        .btn-primary {
+            background: var(--p);
+            color: #fff;
+        }
+
+        .btn-primary:hover {
+            background: var(--pd);
+            transform: translateY(-1px);
+            box-shadow: var(--sh);
+        }
+
+        .btn-outline {
+            border-color: var(--p);
+            color: var(--p);
+            background: transparent;
+        }
+
+        .btn-outline:hover {
+            background: var(--p);
+            color: #fff;
+        }
+
+        .btn-google {
+            background: #ea4335;
+            color: #fff;
+        }
+
+        .btn-google:hover {
+            background: #d33426;
+        }
+
+        .btn-facebook {
+            background: #1877f2;
+            color: #fff;
+        }
+
+        .btn-facebook:hover {
+            background: #166fe5;
+        }
+
+        .btn-phone {
+            background: var(--s);
+            color: #fff;
+        }
+
+        .btn-phone:hover {
+            background: var(--sl);
+        }
+
+        .btn-danger {
+            background: var(--d);
+            color: #fff;
+        }
+
+        .btn-sm {
+            padding: .35rem .8rem;
+            font-size: .75rem;
+        }
+
+        .btn-lg {
+            padding: .8rem 2rem;
+            font-size: 1rem;
+        }
+
+        .btn-block {
+            width: 100%;
+            justify-content: center;
+        }
+
+        .section {
+            padding: 3rem 1.5rem;
+        }
+
+        .section:nth-child(even) {
+            background: var(--wht);
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        h1,
+        h2 {
+            text-align: center;
+            color: var(--p);
+            margin-bottom: 1rem;
+        }
+
+        .hidden {
+            display: none !important;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 3rem 0;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+        }
+
+        .hero p {
+            color: var(--t2);
+            max-width: 600px;
+            margin: 0 auto 1.5rem;
+        }
+
+        .hero-btns {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .feature {
+            background: var(--wht);
+            padding: 2rem 1.5rem;
+            border-radius: var(--r);
+            text-align: center;
+            box-shadow: var(--sh);
+            transition: var(--t);
+        }
+
+        .feature:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shl);
+        }
+
+        .feature i {
+            font-size: 2.5rem;
+            color: var(--a);
+            margin-bottom: 1rem;
+        }
+
+        .feature h3 {
+            color: var(--p);
+            margin-bottom: .5rem;
+        }
+
+        .social-login {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .social-login button {
+            padding: .8rem;
+            justify-content: center;
+        }
+
+        .divider {
+            text-align: center;
+            margin: 1.5rem 0;
+            color: var(--t2);
+            position: relative;
+        }
+
+        .divider::before,
+        .divider::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            width: 40%;
+            height: 1px;
+            background: var(--bdr);
+        }
+
+        .divider::before {
+            left: 0;
+        }
+
+        .divider::after {
+            right: 0;
+        }
+
+        .divider span {
+            background: var(--bg);
+            padding: 0 1rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .form {
+            max-width: 450px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .form input,
+        .form select {
+            padding: .7rem 1rem;
+            border: 2px solid var(--bdr);
+            border-radius: 8px;
+            font-size: .9rem;
+            font-family: inherit;
+            transition: var(--t);
+        }
+
+        .form input:focus,
+        .form select:focus {
+            border-color: var(--p);
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(26, 35, 126, .08);
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1rem;
+        }
+
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+        }
+
+        .card {
+            background: var(--wht);
+            padding: 1.5rem;
+            border-radius: var(--r);
+            box-shadow: var(--sh);
+            text-align: center;
+            transition: var(--t);
+            text-decoration: none;
+            color: var(--tx);
+            display: block;
+            border: 1px solid var(--bdr);
+        }
+
+        .card:hover {
+            box-shadow: var(--shl);
+            transform: translateY(-3px);
+        }
+
+        .card i {
+            color: var(--a);
+            margin-bottom: .75rem;
+        }
+
+        .card h3 {
+            color: var(--p);
+            margin-bottom: .5rem;
+        }
+
+        .filters {
+            display: flex;
+            gap: .5rem;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .filters input,
+        .filters select {
+            padding: .6rem 1rem;
+            border: 2px solid var(--bdr);
+            border-radius: var(--rr);
+            font-size: .85rem;
+            font-family: inherit;
+        }
+
+        .filters input {
+            flex: 1;
+            min-width: 180px;
+        }
+
+        .job-card {
+            background: var(--wht);
+            padding: 1.2rem;
+            border-radius: var(--r);
+            box-shadow: var(--sh);
+            border-left: 4px solid var(--p);
+            transition: var(--t);
+        }
+
+        .job-card:hover {
+            box-shadow: var(--shl);
+        }
+
+        .job-card h4 {
+            color: var(--p);
+            margin-bottom: .5rem;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: .2rem .7rem;
+            border-radius: var(--rr);
+            font-size: .7rem;
+            font-weight: 600;
+            margin: .2rem;
+        }
+
+        .badge-p {
+            background: #e3f2fd;
+            color: var(--p);
+        }
+
+        .badge-s {
+            background: #e8f5e9;
+            color: var(--s);
+        }
+
+        .badge-w {
+            background: #fff3e0;
+            color: var(--w);
+        }
+
+        .admin-layout {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .admin-tabs {
+            display: flex;
+            gap: .25rem;
+            flex-wrap: wrap;
+            margin-bottom: 1rem;
+        }
+
+        .admin-tabs button {
+            padding: .5rem 1rem;
+            border: none;
+            background: #f0f0f0;
+            cursor: pointer;
+            border-radius: var(--rr);
+            font-weight: 600;
+            font-size: .8rem;
+            transition: var(--t);
+        }
+
+        .admin-tabs button.active {
+            background: var(--p);
+            color: #fff;
+        }
+
+        .admin-content {
+            background: var(--wht);
+            padding: 1.5rem;
+            border-radius: var(--r);
+            box-shadow: var(--sh);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: .8rem;
+        }
+
+        table th,
+        table td {
+            padding: .6rem;
+            border-bottom: 1px solid var(--bdr);
+            text-align: left;
+        }
+
+        .rtl table th,
+        .rtl table td {
+            text-align: right;
+        }
+
+        table th {
+            background: #f5f5f5;
+            font-weight: 600;
+        }
+
+        footer {
+            background: var(--p);
+            color: #fff;
+            padding: 2rem 1.5rem;
+            margin-top: auto;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        footer h4 {
+            color: #90caf9;
+            margin-bottom: .75rem;
+        }
+
+        footer a {
+            color: #ccc;
+            text-decoration: none;
+            display: block;
+            margin: .3rem 0;
+            font-size: .85rem;
+        }
+
+        footer a:hover {
+            color: #fff;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            margin-top: 2rem;
+            padding-top: 1rem;
+            border-top: 1px solid rgba(255, 255, 255, .2);
+            font-size: .75rem;
+            color: #999;
+        }
+
+        #toast-container {
+            position: fixed;
+            bottom: 1.5rem;
+            right: 1.5rem;
+            z-index: 9999;
+            display: flex;
+            flex-direction: column;
+            gap: .5rem;
+        }
+
+        .toast-msg {
+            padding: .8rem 1.2rem;
+            border-radius: 8px;
+            color: #fff;
+            font-weight: 600;
+            font-size: .85rem;
+            animation: slideIn .3s ease;
+            box-shadow: var(--shl);
+        }
+
+        .toast-ok {
+            background: var(--s);
+        }
+
+        .toast-err {
+            background: var(--d);
+        }
+
+        .toast-warn {
+            background: var(--w);
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateX(100px);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        .stat-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .stat-card {
+            background: var(--wht);
+            padding: 1.5rem;
+            border-radius: var(--r);
+            text-align: center;
+            box-shadow: var(--sh);
+        }
+
+        .stat-card h2 {
+            font-size: 2.5rem;
+            color: var(--p);
+        }
+
+        .stat-card p {
+            color: var(--t2);
+        }
+
+        .loading-text {
+            text-align: center;
+            padding: 2rem;
+            color: var(--t2);
+            grid-column: 1/-1;
+        }
+
+        @media(max-width:768px) {
+            .nav-toggle {
+                display: block;
+            }
+            .nav-menu {
+                display: none;
+                position: absolute;
+                top: 60px;
+                left: 0;
+                right: 0;
+                background: var(--wht);
+                flex-direction: column;
+                padding: 1rem;
+                box-shadow: var(--sh);
+            }
+            .nav-menu.open {
+                display: flex;
+            }
+            .nav-links {
+                flex-direction: column;
+            }
+            .nav-actions {
+                flex-direction: column;
+                width: 100%;
+            }
+            .social-login {
+                grid-template-columns: 1fr;
+            }
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+            .navbar {
+                top: 48px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- DISCLAIMER BAR -->
+    <div class="disclaimer-bar">
+        <i class="fas fa-exclamation-triangle"></i>
+        <span class="disclaimer-text-fr">Nous ne soutenons ni n'encourageons l'immigration illégale. Notre mission est de fournir des informations légales et un soutien à l'intégration conformément au droit français et européen.</span>
+        <span class="disclaimer-text-en">We do not support or encourage illegal immigration. Our mission is to provide legal information and integration support in accordance with French and European law.</span>
+        <span class="disclaimer-text-ar">نحن لا ندعم أو نشجع الهجرة غير الشرعية. مهمتنا هي تقديم المعلومات القانونية والدعم للاندماج وفقًا للقانون الفرنسي والأوروبي.</span>
+    </div>
+
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#home" class="nav-brand"><i class="fas fa-globe-europe"></i> <span data-i18n="brand">Horizons d'Avenir</span></a>
+            <button class="nav-toggle" id="navToggle"><i class="fas fa-bars"></i></button>
+            <div class="nav-menu" id="navMenu">
+                <ul class="nav-links">
+                    <li><a href="#home" class="active" data-i18n="nav.home">Accueil</a></li>
+                    <li><a href="#jobs" data-i18n="nav.jobs">Emplois</a></li>
+                    <li><a href="#training" data-i18n="nav.training">Formations</a></li>
+                    <li><a href="#videos" data-i18n="nav.videos">Vidéos</a></li>
+                    <li><a href="#posters" data-i18n="nav.posters">Affiches</a></li>
+                    <li><a href="#volunteering" data-i18n="nav.volunteering">Bénévolat</a></li>
+                    <li><a href="#legal" data-i18n="nav.legal">Droit</a></li>
+                    <li><a href="#admin" class="admin-only hidden" data-i18n="nav.admin">🔧 Admin</a></li>
+                </ul>
+                <div class="nav-actions">
+                    <select id="langSwitch"><option value="fr">🇫🇷 FR</option><option value="en">🇬🇧 EN</option><option value="ar">🇸🇦 AR</option></select>
+                    <button class="btn btn-outline btn-sm" id="btnLogin"><i class="fas fa-sign-in-alt"></i> <span data-i18n="auth.login">Connexion</span></button>
+                    <button class="btn btn-primary btn-sm" id="btnRegister"><i class="fas fa-user-plus"></i> <span data-i18n="auth.register">Inscription</span></button>
+                    <span id="userBadge" class="hidden"></span>
+                    <button class="btn btn-outline btn-sm hidden" id="btnLogout"><i class="fas fa-sign-out-alt"></i> <span data-i18n="auth.logout">Déconnexion</span></button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- MAIN CONTENT -->
+    <main id="mainContent">
+        <!-- HOME -->
+        <section id="home" class="section">
+            <div class="container">
+                <div class="hero">
+                    <h1 data-i18n="home.title">Bienvenue sur Horizons d'Avenir</h1>
+                    <p data-i18n="home.sub">Plateforme dédiée à l'insertion professionnelle des réfugiés et migrants en France.</p>
+                    <div class="hero-btns">
+                        <a href="#register" class="btn btn-primary btn-lg" data-i18n="home.cta1">Commencer</a>
+                        <a href="#jobs" class="btn btn-outline btn-lg" data-i18n="home.cta2">Voir les offres</a>
+                    </div>
+                </div>
+                <div class="features">
+                    <div class="feature"><i class="fas fa-briefcase"></i><h3 data-i18n="home.f1t">Emplois</h3><p data-i18n="home.f1d">Offres dans votre ville</p></div>
+                    <div class="feature"><i class="fas fa-graduation-cap"></i><h3 data-i18n="home.f2t">Formations</h3><p data-i18n="home.f2d">Coursera, LinkedIn, Pôle Emploi</p></div>
+                    <div class="feature"><i class="fas fa-balance-scale"></i><h3 data-i18n="home.f3t">Droits</h3><p data-i18n="home.f3d">CESEDA, CEAS, Genève</p></div>
+                    <div class="feature"><i class="fas fa-video"></i><h3 data-i18n="home.f4t">Ressources</h3><p data-i18n="home.f4d">Vidéos et affiches</p></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- REGISTER -->
+        <section id="register" class="section hidden">
+            <div class="container">
+                <h2 data-i18n="reg.title">Créer votre compte</h2>
+                <div class="social-login">
+                    <button class="btn btn-google btn-block" onclick="Auth.socialAuth('google')"><i class="fab fa-google"></i> <span data-i18n="reg.google">Google</span></button>
+                    <button class="btn btn-facebook btn-block" onclick="Auth.socialAuth('facebook')"><i class="fab fa-facebook-f"></i> <span data-i18n="reg.facebook">Facebook</span></button>
+                    <button class="btn btn-phone btn-block" onclick="Auth.phoneAuth()"><i class="fas fa-mobile-alt"></i> <span data-i18n="reg.phone">+33 Téléphone</span></button>
+                </div>
+                <div class="divider"><span data-i18n="reg.or">ou par email</span></div>
+                <form id="emailRegister" class="form">
+                    <input type="text" id="regName" data-i18n-placeholder="reg.name" placeholder="Nom complet" required>
+                    <input type="email" id="regEmail" placeholder="Email" required>
+                    <input type="password" id="regPass" data-i18n-placeholder="reg.pass" placeholder="Mot de passe (6+)" required minlength="6">
+                    <input type="password" id="regPass2" data-i18n-placeholder="reg.pass2" placeholder="Confirmer mot de passe" required>
+                    <button type="submit" class="btn btn-primary btn-block" data-i18n="reg.btn">S'inscrire</button>
+                </form>
+            </div>
+        </section>
+
+        <!-- PROFILE -->
+        <section id="profile" class="section hidden">
+            <div class="container">
+                <h2 data-i18n="prof.title">Compléter votre profil</h2>
+                <form id="profileForm" class="form">
+                    <select id="profStatus" required><option value="">Statut *</option><option value="jobseeker">Demandeur d'emploi</option><option value="trainee">Stagiaire</option><option value="volunteer">Bénévole</option></select>
+                    <select id="profCity" required><option value="">Ville *</option><option>Paris</option><option>Lyon</option><option>Marseille</option><option>Lille</option><option>Strasbourg</option><option>Toulouse</option></select>
+                    <select id="profLegal"><option value="">Situation juridique</option><option value="asylum">Demandeur d'asile</option><option value="refugee">Réfugié</option><option value="temporary">Titre temporaire</option><option value="undocumented">Sans papiers</option></select>
+                    <button type="submit" class="btn btn-primary btn-block" data-i18n="prof.save">✓ Enregistrer</button>
+                </form>
+            </div>
+        </section>
+
+        <!-- JOBS -->
+        <section id="jobs" class="section">
+            <div class="container">
+                <h2 data-i18n="jobs.title">Offres d'Emploi</h2>
+                <div class="filters">
+                    <input type="text" id="jobSearch" data-i18n-placeholder="jobs.search" placeholder="🔍 Rechercher...">
+                    <select id="jobCity"><option value="">Toutes villes</option></select>
+                    <select id="jobContract"><option value="">Tous contrats</option><option>CDI</option><option>CDD</option><option>Intérim</option><option>Freelance</option></select>
+                </div>
+                <div class="grid-2" id="jobsList"><p class="loading-text">Chargement...</p></div>
+            </div>
+        </section>
+
+        <!-- TRAINING -->
+        <section id="training" class="section">
+            <div class="container">
+                <h2 data-i18n="train.title">Formations</h2>
+                <div class="grid-3">
+                    <a href="https://coursera.org/refugees" target="_blank" rel="noopener" class="card"><i class="fas fa-university fa-3x"></i><h3>Coursera</h3><p data-i18n="train.c">Cours gratuits pour réfugiés</p></a>
+                    <a href="https://linkedin.com/learning" target="_blank" rel="noopener" class="card"><i class="fab fa-linkedin fa-3x"></i><h3>LinkedIn Learning</h3><p data-i18n="train.l">Compétences professionnelles</p></a>
+                    <a href="https://pole-emploi.fr" target="_blank" rel="noopener" class="card"><i class="fas fa-building fa-3x"></i><h3>Pôle Emploi</h3><p data-i18n="train.p">Formations France</p></a>
+                </div>
+            </div>
+        </section>
+
+        <!-- VIDEOS -->
+        <section id="videos" class="section">
+            <div class="container"><h2 data-i18n="vid.title">Vidéos Éducatives</h2><div class="grid-3" id="videosList"><p class="loading-text">Chargement...</p></div></div>
+        </section>
+
+        <!-- POSTERS -->
+        <section id="posters" class="section">
+            <div class="container"><h2 data-i18n="post.title">Affiches</h2><div class="grid-3" id="postersList"><p class="loading-text">Chargement...</p></div></div>
+        </section>
+
+        <!-- VOLUNTEERING -->
+        <section id="volunteering" class="section">
+            <div class="container"><h2 data-i18n="vol.title">Bénévolat</h2><div class="grid-2" id="volList"><p class="loading-text">Chargement...</p></div></div>
+        </section>
+
+        <!-- LEGAL -->
+        <section id="legal" class="section">
+            <div class="container">
+                <h2 data-i18n="legal.title">Cadre Juridique</h2>
+                <div class="grid-3">
+                    <div class="card"><h3>🇫🇷 Loi Immigration</h3><p>CESEDA</p><a href="https://legifrance.gouv.fr" target="_blank" rel="noopener" class="btn btn-outline">Consulter →</a></div>
+                    <div class="card"><h3>🇪🇺 Politique UE</h3><p>CEAS</p><a href="https://home-affairs.ec.europa.eu" target="_blank" rel="noopener" class="btn btn-outline">Consulter →</a></div>
+                    <div class="card"><h3>🌍 Convention Genève</h3><p>1951</p><a href="https://unhcr.org/fr" target="_blank" rel="noopener" class="btn btn-outline">Consulter →</a></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ADMIN -->
+        <section id="admin" class="section hidden">
+            <div class="container">
+                <h2>🔧 Administration</h2>
+                <div class="admin-layout">
+                    <div class="admin-tabs">
+                        <button class="active" data-atab="dashboard">📊 Tableau</button>
+                        <button data-atab="users">👥 Utilisateurs</button>
+                        <button data-atab="jobs-admin">💼 Offres</button>
+                        <button data-atab="videos-admin">🎬 Vidéos</button>
+                        <button data-atab="posters-admin">🖼️ Affiches</button>
+                        <button data-atab="admins">🛡️ Admins</button>
+                    </div>
+                    <div class="admin-content" id="adminContent"></div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-grid">
+            <div><h4>Horizons d'Avenir</h4><p>📍 Paris, France</p><p>📞 +33 1 23 45 67 89</p><p>📧 contact@horizonsdavenir.fr</p></div>
+            <div><h4 data-i18n="footer.links">Liens</h4><a href="#jobs">Emplois</a><a href="#training">Formations</a><a href="#legal">Droit</a></div>
+            <div><h4 data-i18n="footer.legal">Légal</h4><a href="#">Mentions</a><a href="#">RGPD</a><a href="#">Confidentialité</a></div>
+        </div>
+        <p class="footer-bottom">© 2024 Horizons d'Avenir - Conforme RGPD - France</p>
+    </footer>
+
+    <!-- TOAST -->
+    <div id="toast-container"></div>
+
+    <script>
+        // ==================== I18N ====================
+        const I18N = {
+            lang: localStorage.getItem("lang") || "fr",
+            data: {
+                fr: {
+                    brand: "Horizons d'Avenir",
+                    nav: { home: "Accueil", jobs: "Emplois", training: "Formations", videos: "Vidéos", posters: "Affiches",
+                        volunteering: "Bénévolat", legal: "Droit", admin: "🔧 Admin" },
+                    auth: { login: "Connexion", register: "Inscription", logout: "Déconnexion" },
+                    home: { title: "Bienvenue sur Horizons d'Avenir",
+                        sub: "Plateforme dédiée à l'insertion professionnelle des réfugiés et migrants en France.",
+                        cta1: "Commencer", cta2: "Voir les offres", f1t: "Emplois", f1d: "Offres dans votre ville",
+                        f2t: "Formations", f2d: "Coursera, LinkedIn, Pôle Emploi", f3t: "Droits",
+                    f3d: "CESEDA, CEAS, Genève", f4t: "Ressources", f4d: "Vidéos et affiches" },
+                    reg: { title: "Créer votre compte", google: "Google", facebook: "Facebook", phone: "+33 Téléphone",
+                        or: "ou par email", name: "Nom complet", pass: "Mot de passe (6+)",
+                        pass2: "Confirmer le mot de passe", btn: "S'inscrire" },
+                    prof: { title: "Compléter votre profil", save: "✓ Enregistrer" },
+                    jobs: { title: "Offres d'Emploi", search: "🔍 Rechercher...", no: "Aucune offre trouvée.",
+                        apply: "Postuler", pub: "Publié le" },
+                    train: { title: "Formations", c: "Cours gratuits pour réfugiés", l: "Compétences professionnelles",
+                        p: "Formations France" },
+                    vid: { title: "Vidéos Éducatives", no: "Aucune vidéo." },
+                    post: { title: "Affiches" },
+                    vol: { title: "Bénévolat", no: "Aucune offre.", btn: "Devenir bénévole" },
+                    legal: { title: "Cadre Juridique" },
+                    footer: { links: "Liens", legal: "Légal" },
+                    toast: { regOk: "✅ Compte créé!", profOk: "✅ Profil enregistré!", loginOk: "✅ Connecté!",
+                        loginErr: "❌ Identifiants incorrects", logoutOk: "👋 Déconnecté",
+                    apply: "✅ Candidature pour:", jobAdd: "✅ Offre ajoutée", jobDel: "🗑️ Offre supprimée",
+                        vidAdd: "✅ Vidéo ajoutée", vidDel: "🗑️ Vidéo supprimée", volOk: "✅ Inscription bénévole:",
+                        lang: "🌐 Langue: Français" }
+                },
+                en: {
+                    brand: "Horizons d'Avenir",
+                    nav: { home: "Home", jobs: "Jobs", training: "Training", videos: "Videos", posters: "Posters",
+                        volunteering: "Volunteering", legal: "Law", admin: "🔧 Admin" },
+                    auth: { login: "Login", register: "Register", logout: "Logout" },
+                    home: { title: "Welcome to Horizons d'Avenir",
+                        sub: "Platform for professional integration of refugees and migrants in France.",
+                        cta1: "Get Started", cta2: "View Jobs", f1t: "Jobs", f1d: "Offers in your city", f2t: "Training",
+                        f2d: "Coursera, LinkedIn, Pôle Emploi", f3t: "Rights", f3d: "CESEDA, CEAS, Geneva",
+                    f4t: "Resources", f4d: "Videos and posters" },
+                    reg: { title: "Create Account", google: "Google", facebook: "Facebook", phone: "+33 Phone",
+                        or: "or by email", name: "Full name", pass: "Password (6+)", pass2: "Confirm password",
+                        btn: "Register" },
+                    prof: { title: "Complete Profile", save: "✓ Save" },
+                    jobs: { title: "Job Offers", search: "🔍 Search...", no: "No jobs found.", apply: "Apply",
+                        pub: "Published" },
+                    train: { title: "Training", c: "Free courses for refugees", l: "Professional skills",
+                        p: "Official French training" },
+                    vid: { title: "Educational Videos", no: "No videos." },
+                    post: { title: "Posters" },
+                    vol: { title: "Volunteering", no: "No offers.", btn: "Become volunteer" },
+                    legal: { title: "Legal Framework" },
+                    footer: { links: "Links", legal: "Legal" },
+                    toast: { regOk: "✅ Account created!", profOk: "✅ Profile saved!", loginOk: "✅ Logged in!",
+                        loginErr: "❌ Wrong credentials", logoutOk: "👋 Logged out", apply: "✅ Applied for:",
+                        jobAdd: "✅ Job added", jobDel: "🗑️ Job deleted", vidAdd: "✅ Video added",
+                    vidDel: "🗑️ Video deleted", volOk: "✅ Volunteer:", lang: "🌐 Language: English" }
+                },
+                ar: {
+                    brand: "آفاق المستقبل",
+                    nav: { home: "الرئيسية", jobs: "وظائف", training: "تدريبات", videos: "فيديوهات", posters: "ملصقات",
+                        volunteering: "تطوع", legal: "قانون", admin: "🔧 إدارة" },
+                    auth: { login: "دخول", register: "تسجيل", logout: "خروج" },
+                    home: { title: "مرحباً بكم في آفاق المستقبل",
+                        sub: "منصة للإدماج المهني للاجئين والمهاجرين في فرنسا.", cta1: "ابدأ الآن", cta2: "تصفح الوظائف",
+                        f1t: "وظائف", f1d: "عروض في مدينتك", f2t: "تدريبات", f2d: "كورسيرا، لينكدإن، بول إمبلوا",
+                        f3t: "حقوق", f3d: "CESEDA, CEAS, جنيف", f4t: "موارد", f4d: "فيديوهات وملصقات" },
+                    reg: { title: "إنشاء حساب", google: "جوجل", facebook: "فيسبوك", phone: "+33 هاتف", or: "أو بالبريد",
+                        name: "الاسم الكامل", pass: "كلمة المرور (6+)", pass2: "تأكيد كلمة المرور", btn: "تسجيل" },
+                    prof: { title: "أكمل ملفك", save: "✓ حفظ" },
+                    jobs: { title: "عروض العمل", search: "🔍 بحث...", no: "لا توجد عروض.", apply: "تقديم", pub: "نُشر" },
+                    train: { title: "التدريبات", c: "دورات مجانية للاجئين", l: "مهارات مهنية",
+                    p: "تدريبات رسمية فرنسا" },
+                    vid: { title: "فيديوهات تعليمية", no: "لا توجد فيديوهات." },
+                    post: { title: "ملصقات" },
+                    vol: { title: "تطوع", no: "لا توجد عروض.", btn: "كن متطوعاً" },
+                    legal: { title: "الإطار القانوني" },
+                    footer: { links: "روابط", legal: "قانوني" },
+                    toast: { regOk: "✅ تم إنشاء الحساب!", profOk: "✅ تم حفظ الملف!", loginOk: "✅ تم الدخول!",
+                        loginErr: "❌ بيانات خاطئة", logoutOk: "👋 تم الخروج", apply: "✅ تقديم على:",
+                        jobAdd: "✅ تمت إضافة الوظيفة", jobDel: "🗑️ تم حذف الوظيفة", vidAdd: "✅ تمت إضافة الفيديو",
+                    vidDel: "🗑️ تم حذف الفيديو", volOk: "✅ تطوع في:", lang: "🌐 اللغة: العربية" }
+                }
+            },
+            t(k) { let v = this.data[this.lang]; for (let p of k.split(".")) { if (v && v[p] !== undefined) v = v[
+                    p]; else return k; } return v; },
+            apply() { document.documentElement.lang = this.lang;
+                document.body.classList.toggle("rtl", this.lang === "ar");
+                document.querySelectorAll("[data-i18n]").forEach(e => e.textContent = this.t(e.dataset.i18n));
+                document.querySelectorAll("[data-i18n-placeholder]").forEach(e => e.placeholder = this.t(e.dataset
+                    .i18nPlaceholder));
+                document.getElementById("langSwitch").value = this.lang; },
+            switch(l) { this.lang = l;
+                localStorage.setItem("lang", l);
+                this.apply(); if (typeof App !== "undefined") App.renderAll(); if (typeof toast !== "undefined") toast(
+                    this.t("toast.lang")); }
+        };
+
+        // ==================== STORE ====================
+        const Store = {
+            get(k) { try { return JSON.parse(localStorage.getItem("h_" + k)); } catch (e) { return null; } },
+            set(k, v) { localStorage.setItem("h_" + k, JSON.stringify(v)); },
+            users() { return this.get("users") || []; },
+            saveUsers(u) { this.set("users", u); },
+            jobs() { return this.get("jobs") || []; },
+            saveJobs(j) { this.set("jobs", j); },
+            videos() { return this.get("videos") || []; },
+            saveVideos(v) { this.set("videos", v); },
+            posters() { return this.get("posters") || []; },
+            savePosters(p) { this.set("posters", p); },
+            admins() { return this.get("admins") || ["cashierpro32@gmail.com"]; },
+            saveAdmins(a) { this.set("admins", a); },
+            init() {
+                if (!this.jobs().length) this.saveJobs([{ id: 1, title: "Aide Cuisinier", title_ar: "مساعد طباخ",
+                    title_en: "Kitchen Assistant", city: "paris", contract: "CDI",
+                    desc: "Restaurant recherche aide cuisinier. Formation assurée.",
+                    desc_ar: "مطعم يبحث عن مساعد طباخ. التدريب مضمون.",
+                    desc_en: "Restaurant seeks kitchen assistant. Training provided.", date: "2024-01-15" }, { id: 2,
+                    title: "Agent d'entretien", title_ar: "عامل نظافة", title_en: "Maintenance Agent", city: "lyon",
+                    contract: "CDD", desc: "Nettoyage bureaux. Débutant accepté.", desc_ar: "تنظيف مكاتب. يقبل المبتدئين.",
+                    desc_en: "Office cleaning. Beginners accepted.", date: "2024-02-01" }, { id: 3,
+                    title: "Manutentionnaire", title_ar: "عامل مناولة", title_en: "Handler", city: "marseille",
+                    contract: "Intérim", desc: "Entrepôt logistique.", desc_ar: "مستودع لوجستي.",
+                    desc_en: "Logistics warehouse.", date: "2024-02-15" }, { id: 4, title: "Aide à domicile",
+                    title_ar: "مساعد منزلي", title_en: "Home Helper", city: "paris", contract: "CDI",
+                    desc: "Aide aux personnes âgées.", desc_ar: "مساعدة كبار السن.", desc_en: "Elderly care.",
+                    date: "2024-03-01" }]);
+                if (!this.videos().length) this.saveVideos([{ id: 1, title: "Vos droits en France",
+                    title_ar: "حقوقك في فرنسا", title_en: "Your Rights in France", cat: "legal", lang: "fr" }, { id: 2,
+                    title: "Rédiger un CV", title_ar: "كتابة السيرة الذاتية", title_en: "Writing a CV", cat: "emploi",
+                    lang: "fr" }, { id: 3, title: "Préparer un entretien", title_ar: "التحضير للمقابلة",
+                    title_en: "Interview Preparation", cat: "emploi", lang: "fr" }]);
+                if (!this.posters().length) this.savePosters([{ id: 1, title: "Connaissez vos droits",
+                    title_ar: "اعرف حقوقك", title_en: "Know Your Rights", topic: "Droits" }, { id: 2,
+                    title: "Numéros d'urgence", title_ar: "أرقام الطوارئ", title_en: "Emergency Numbers",
+                    topic: "Urgence" }, { id: 3, title: "Accès aux soins", title_ar: "الوصول للرعاية",
+                    title_en: "Access to Care", topic: "Santé" }]);
+            },
+            local(k, item) { const lang = I18N.lang; return (lang !== "fr" && item[k + "_" + lang]) ? item[k + "_" +
+                    lang] : item[k]; }
+        };
+
+        // ==================== AUTH ====================
+        const Auth = {
+            user: JSON.parse(localStorage.getItem("h_user") || "null"),
+            adminEmail: "cashierpro32@gmail.com",
+            adminPass: "123",
+            isLoggedIn() { return !!this.user; },
+            isAdmin() { return this.user && Store.admins().includes(this.user.email); },
+            login(u) { this.user = u;
+                localStorage.setItem("h_user", JSON.stringify(u));
+                this.updateUI(); },
+            logout() { this.user = null;
+                localStorage.removeItem("h_user");
+                this.updateUI();
+                toast(I18N.t("toast.logoutOk"));
+                App.showSection("home"); },
+            updateUI() { const l = this.isLoggedIn(),
+                    a = this.isAdmin();
+                document.getElementById("btnLogin").classList.toggle("hidden", l);
+                document.getElementById("btnRegister").classList.toggle("hidden", l);
+                document.getElementById("btnLogout").classList.toggle("hidden", !l);
+                document.querySelectorAll(".admin-only").forEach(e => e.classList.toggle("hidden", !a));
+                const badge = document.getElementById("userBadge"); if (l) { badge.classList.remove("hidden");
+                    badge.innerHTML = '<i class="fas fa-user-circle"></i> ' + this.user.name; } else { badge.classList
+                        .add("hidden");
+                    badge.innerHTML = ""; } },
+            registerEmail(name, email, pass, pass2) { if (pass !== pass2) { toast(
+                    "Les mots de passe ne correspondent pas", "err"); return; } const users = Store.users(); if (users
+                    .find(u => u.email === email)) { toast("Cet email est déjà utilisé", "err"); return; } const user = {
+                    id: "u" + Date.now(), name, email, password: pass, provider: "email", createdAt: new Date()
+                        .toISOString() };
+                users.push(user);
+                Store.saveUsers(users);
+                this.login(user);
+                toast(I18N.t("toast.regOk"));
+                App.showSection("profile"); },
+            socialAuth(provider) { const urls = { google: "https://accounts.google.com/signin/v2/identifier",
+                    facebook: "https://www.facebook.com/login.php" }; const w = 500,
+                    h = 600,
+                    l = (screen.width - w) / 2,
+                    t = (screen.height - h) / 2;
+                window.open(urls[provider], provider + "Auth", "width=" + w + ",height=" + h + ",left=" + l + ",top=" +
+                    t);
+                setTimeout(() => { const name = prompt("Nom complet:"),
+                        email = prompt("Email:"); if (name && email) this.registerSocial(provider, email,
+                    name); }, 2000); },
+            phoneAuth() { const phone = prompt("Numéro de téléphone (+33):"),
+                    name = prompt("Nom complet:"); if (phone && name) this.registerSocial("phone", phone, name); },
+            registerSocial(provider, email, name) { const users = Store.users(); let user = users.find(u => u.email ===
+                    email); if (!user) { user = { id: "u" + Date.now(), name, email, provider, createdAt: new Date()
+                        .toISOString() };
+                    users.push(user);
+                    Store.saveUsers(users); } this.login(user);
+                toast(I18N.t("toast.regOk"));
+                App.showSection("profile"); },
+            attemptLogin(email, pass) { if (email === this.adminEmail && pass === this.adminPass) { let users = Store
+                        .users(); let user = users.find(u => u.email === email); if (!user) { user = { id: "admin1",
+                        name: "Admin Principal", email, password: pass, provider: "email", status: "admin",
+                        profileComplete: !0, createdAt: new Date().toISOString() };
+                        users.push(user);
+                        Store.saveUsers(users); } this.login(user);
+                    toast("✅ Admin connecté !"); return !0; } const user = Store.users().find(u => u.email === email && u
+                    .password === pass); if (user) { this.login(user);
+                    toast(I18N.t("toast.loginOk")); return !0; } toast(I18N.t("toast.loginErr"), "err"); return !1; }
+        };
+
+        // ==================== ADMIN ====================
+        const Admin = {
+            render(tab) { const c = document.getElementById("adminContent"); if (tab === "dashboard") { const users = Store
+                        .users(),
+                        jobs = Store.jobs(),
+                        videos = Store.videos(),
+                        posters = Store.posters();
+                    c.innerHTML =
+                        '<div class="stat-cards"><div class="stat-card"><h2>' + users.length +
+                        '</h2><p>Utilisateurs</p></div><div class="stat-card"><h2>' + jobs.length +
+                        '</h2><p>Offres</p></div><div class="stat-card"><h2>' + videos.length +
+                        '</h2><p>Vidéos</p></div><div class="stat-card"><h2>' + posters.length +
+                        '</h2><p>Affiches</p></div></div><h4>Derniers utilisateurs</h4><table><tr><th>Nom</th><th>Email</th><th>Date</th></tr>' +
+                        users.slice(-5).reverse().map(u => "<tr><td>" + u.name + "</td><td>" + u.email + "</td><td>" +
+                            new Date(u.createdAt).toLocaleDateString() + "</td></tr>").join("") + "</table>"; } else if (
+                    tab === "users") { const users = Store.users();
+                    c.innerHTML = '<table><tr><th>Nom</th><th>Email</th><th>Statut</th><th>Action</th></tr>' + users.map(
+                        u => "<tr><td>" + u.name + "</td><td>" + u.email + "</td><td>" + (u.status || "-") +
+                        "</td><td><button class='btn btn-danger btn-sm' onclick='Admin.deleteUser(\"" + u.id +
+                        "\")'>🗑️</button></td></tr>").join("") + "</table>"; } else if (tab === "jobs-admin") { const
+                    jobs = Store.jobs();
+                    c.innerHTML =
+                        '<button class="btn btn-primary btn-sm" onclick="Admin.addJob()">+ Ajouter</button><table style="margin-top:1rem"><tr><th>Titre</th><th>Ville</th><th>Contrat</th><th>Action</th></tr>' +
+                        jobs.map(j => "<tr><td>" + j.title + "</td><td>" + j.city + "</td><td>" + j.contract +
+                            "</td><td><button class='btn btn-danger btn-sm' onclick='Admin.deleteJob(" + j.id +
+                            ")'>🗑️</button></td></tr>").join("") + "</table>"; } else if (tab === "videos-admin") { const
+                    videos = Store.videos();
+                    c.innerHTML =
+                        '<button class="btn btn-primary btn-sm" onclick="Admin.addVideo()">+ Ajouter</button><table style="margin-top:1rem"><tr><th>Titre</th><th>Catégorie</th><th>Langue</th><th>Action</th></tr>' +
+                        videos.map(v => "<tr><td>" + v.title + "</td><td>" + v.cat + "</td><td>" + v.lang +
+                            "</td><td><button class='btn btn-danger btn-sm' onclick='Admin.deleteVideo(" + v.id +
+                            ")'>🗑️</button></td></tr>").join("") + "</table>"; } else if (tab === "posters-admin") { const
+                    posters = Store.posters();
+                    c.innerHTML =
+                        '<button class="btn btn-primary btn-sm" onclick="Admin.addPoster()">+ Ajouter</button><table style="margin-top:1rem"><tr><th>Titre</th><th>Sujet</th><th>Action</th></tr>' +
+                        posters.map(p => "<tr><td>" + p.title + "</td><td>" + p.topic +
+                            "</td><td><button class='btn btn-danger btn-sm' onclick='Admin.deletePoster(" + p.id +
+                            ")'>🗑️</button></td></tr>").join("") + "</table>"; } else if (tab === "admins") { const admins =
+                        Store.admins();
+                    c.innerHTML =
+                        '<button class="btn btn-primary btn-sm" onclick="Admin.addAdmin()">+ Ajouter admin</button><table style="margin-top:1rem"><tr><th>Email</th><th>Action</th></tr>' +
+                        admins.map(a => "<tr><td>" + a + "</td><td>" + (a !== "cashierpro32@gmail.com" ?
+                            "<button class='btn btn-danger btn-sm' onclick='Admin.removeAdmin(\"" + a +
+                            "\")'>🗑️</button>" : "<span class='badge badge-p'>Principal</span>") + "</td></tr>").join(
+                            "") + "</table>"; } },
+            deleteUser(id) { if (confirm("Supprimer cet utilisateur ?")) { Store.saveUsers(Store.users().filter(u => u
+                    .id !== id));
+                    this.render("users");
+                    toast("Utilisateur supprimé"); } },
+            deleteJob(id) { Store.saveJobs(Store.jobs().filter(j => j.id !== id));
+                this.render("jobs-admin");
+                App.renderJobs();
+                toast(I18N.t("toast.jobDel")); },
+            deleteVideo(id) { Store.saveVideos(Store.videos().filter(v => v.id !== id));
+                this.render("videos-admin");
+                App.renderVideos();
+                toast(I18N.t("toast.vidDel")); },
+            deletePoster(id) { Store.savePosters(Store.posters().filter(p => p.id !== id));
+                this.render("posters-admin");
+                App.renderPosters();
+                toast("Affiche supprimée"); },
+            addJob() { const t = prompt("Titre:"),
+                    c = prompt("Ville:"),
+                    ct = prompt("Contrat:"),
+                    d = prompt("Description:"); if (t && c) { const j = Store.jobs();
+                    j.push({ id: Date.now(), title: t, city: c.toLowerCase(), contract: ct, desc: d, date: new Date()
+                            .toISOString().split("T")[0] });
+                    Store.saveJobs(j);
+                    this.render("jobs-admin");
+                    App.renderJobs();
+                    toast(I18N.t("toast.jobAdd")); } },
+            addVideo() { const t = prompt("Titre:"),
+                    c = prompt("Catégorie:"),
+                    l = prompt("Langue (fr/en/ar):"); if (t) { const v = Store.videos();
+                    v.push({ id: Date.now(), title: t, cat: c, lang: l });
+                    Store.saveVideos(v);
+                    this.render("videos-admin");
+                    App.renderVideos();
+                    toast(I18N.t("toast.vidAdd")); } },
+            addPoster() { const t = prompt("Titre:"),
+                    tp = prompt("Sujet:"); if (t) { const p = Store.posters();
+                    p.push({ id: Date.now(), title: t, topic: tp });
+                    Store.savePosters(p);
+                    this.render("posters-admin");
+                    App.renderPosters();
+                    toast("Affiche ajoutée"); } },
+            addAdmin() { const e = prompt("Email du nouvel admin:"); if (e) { const a = Store.admins(); if (!a.includes(
+                    e)) { a.push(e);
+                    Store.saveAdmins(a);
+                    this.render("admins");
+                    toast("✅ Admin ajouté"); } else toast("Déjà admin", "warn"); } },
+            removeAdmin(e) { const a = Store.admins().filter(x => x !== e);
+                Store.saveAdmins(a);
+                this.render("admins");
+                toast("Admin supprimé"); }
+        };
+
+        // ==================== APP ====================
+        const App = {
+            init() { Store.init();
+                I18N.apply();
+                Auth.updateUI();
+                this.renderAll();
+                this.setupEvents(); if (Auth.isLoggedIn()) { document.getElementById("register").classList.add("hidden");
+                    document.getElementById("profile").classList.add("hidden"); }
+                console.log("✅ Horizons d'Avenir - Ready"); },
+            setupEvents() { document.getElementById("langSwitch").addEventListener("change", e => I18N.switch(e.target
+                    .value));
+                document.getElementById("btnLogin").addEventListener("click", () => { const e = prompt("Email:"),
+                        p = prompt("Mot de passe:"); if (e && p) Auth.attemptLogin(e, p); });
+                document.getElementById("btnRegister").addEventListener("click", () => this.showSection("register"));
+                document.getElementById("btnLogout").addEventListener("click", () => Auth.logout());
+                document.getElementById("emailRegister").addEventListener("submit", e => { e.preventDefault();
+                    Auth.registerEmail(document.getElementById("regName").value, document.getElementById("regEmail")
+                        .value, document.getElementById("regPass").value, document.getElementById("regPass2").value); });
+                document.getElementById("profileForm").addEventListener("submit", e => { e.preventDefault();
+                    Auth.user.status = document.getElementById("profStatus").value;
+                    Auth.user.city = document.getElementById("profCity").value;
+                    Auth.user.legalStatus = document.getElementById("profLegal").value;
+                    Auth.user.profileComplete = !0;
+                    localStorage.setItem("h_user", JSON.stringify(Auth.user));
+                    Auth.updateUI();
+                    this.showSection("jobs");
+                    toast(I18N.t("toast.profOk")); });
+                document.getElementById("jobSearch").addEventListener("input", () => this.renderJobs());
+                document.getElementById("jobCity").addEventListener("change", () => this.renderJobs());
+                document.getElementById("jobContract").addEventListener("change", () => this.renderJobs());
+                document.getElementById("navToggle").addEventListener("click", () => document.getElementById("navMenu")
+                    .classList.toggle("open"));
+                document.querySelectorAll(".admin-tabs button").forEach(b => b.addEventListener("click", function() {
+                    document.querySelectorAll(".admin-tabs button").forEach(x => x.classList.remove(
+                        "active"));
+                    this.classList.add("active");
+                    Admin.render(this.dataset.atab); }));
+                document.querySelectorAll(".nav-links a").forEach(a => a.addEventListener("click", function(e) { e
+                        .preventDefault(); const id = this.getAttribute("href").replace("#", ""); if (id ===
+                        "admin" && !Auth.isAdmin()) return toast("Accès réservé admin", "warn");
+                    App.showSection(id);
+                    document.querySelectorAll(".nav-links a").forEach(x => x.classList.remove("active"));
+                    this.classList.add("active"); })); },
+            showSection(id) { document.querySelectorAll("main>section").forEach(s => s.classList.add("hidden")); const
+                    sec = document.getElementById(id); if (sec) { sec.classList.remove("hidden"); if (id === "admin" &&
+                        Auth.isAdmin()) Admin.render("dashboard");
+                    window.scrollTo({ top: sec.offsetTop - 100, behavior: "smooth" }); } },
+            renderAll() { this.renderJobs();
+                this.renderVideos();
+                this.renderPosters();
+                this.renderVolunteering();
+                this.populateCities(); },
+            renderJobs() { const c = document.getElementById("jobsList"); let j = Store.jobs(); const city = document
+                    .getElementById("jobCity").value,
+                    contract = document.getElementById("jobContract").value,
+                    search = document.getElementById("jobSearch").value.toLowerCase(); if (city) j = j.filter(x => x
+                        .city === city); if (contract) j = j.filter(x => x.contract === contract); if (search) j = j
+                    .filter(x => x.title.toLowerCase().includes(search) || (x.desc || "").toLowerCase().includes(
+                        search)); if (!j.length) { c.innerHTML =
+                        '<p class="loading-text">' + I18N.t("jobs.no") + "</p>"; return; }
+                c.innerHTML = j.map(x => '<div class="job-card"><h4>' + (x.title_ar && I18N.lang === "ar" ? x.title_ar :
+                        x.title_en && I18N.lang === "en" ? x.title_en : x.title) +
+                    '</h4><span class="badge badge-p">📍 ' + x.city + '</span> <span class="badge badge-s">📄 ' + x
+                    .contract + '</span><p style="margin:.5rem 0">' + (x.desc_ar && I18N.lang === "ar" ? x.desc_ar : x
+                        .desc_en && I18N.lang === "en" ? x.desc_en : x.desc) + '</p><small>' + I18N.t("jobs.pub") +
+                    ": " + x.date +
+                    '</small><br><button class="btn btn-primary btn-sm" style="margin-top:.5rem" onclick="App.applyJob(' +
+                    x.id + ')">' + I18N.t("jobs.apply") + "</button></div>").join(""); },
+            renderVideos() { const c = document.getElementById("videosList"),
+                    v = Store.videos(); if (!v.length) { c.innerHTML = '<p class="loading-text">' + I18N.t("vid.no") +
+                        "</p>"; return; }
+                c.innerHTML = v.map(x =>
+                    '<div class="card" style="cursor:pointer"><i class="fas fa-play-circle fa-3x" style="color:#764ba2"></i><h4>' +
+                    (x.title_ar && I18N.lang === "ar" ? x.title_ar : x.title_en && I18N.lang === "en" ? x.title_en : x
+                        .title) + "</h4><p>" + x.cat + " | 🌐 " + x.lang.toUpperCase() + "</p></div>").join(""); },
+            renderPosters() { const c = document.getElementById("postersList"),
+                    p = Store.posters();
+                c.innerHTML = p.map(x =>
+                    '<div class="card" style="cursor:pointer"><i class="fas fa-image fa-3x" style="color:#f5576c"></i><h4>' +
+                    (x.title_ar && I18N.lang === "ar" ? x.title_ar : x.title_en && I18N.lang === "en" ? x.title_en : x
+                        .title) + '</h4><span class="badge badge-p">' + x.topic + "</span></div>").join(""); },
+            renderVolunteering() { const c = document.getElementById("volList"),
+                    data = [{ org: "Restos du Cœur", city: "paris", task: "Distribution alimentaire",
+                        task_ar: "توزيع الطعام", task_en: "Food distribution" }, { org: "La Cimade", city: "lyon",
+                        task: "Accompagnement juridique", task_ar: "مرافقة قانونية", task_en: "Legal support" },
+                    { org: "Secours Populaire", city: "marseille", task: "Aide aux réfugiés", task_ar: "مساعدة اللاجئين",
+                        task_en: "Refugee aid" }, { org: "Emmaüs", city: "paris", task: "Tri et vente solidaire",
+                        task_ar: "فرز وبيع تضامني", task_en: "Solidarity sale" }];
+                c.innerHTML = data.map(v =>
+                    '<div class="job-card" style="border-left-color:var(--s)"><h4>' + v.org +
+                    '</h4><span class="badge badge-p">📍 ' + v.city + '</span><p style="margin:.5rem 0">' + (v.task_ar &&
+                        I18N.lang === "ar" ? v.task_ar : v.task_en && I18N.lang === "en" ? v.task_en : v.task) +
+                    '</p><button class="btn btn-outline btn-sm" style="border-color:var(--s);color:var(--s)" onclick="App.applyVol(\'' +
+                    v.org + '\')">' + I18N.t("vol.btn") + "</button></div>").join(""); },
+            populateCities() { const s = document.getElementById("jobCity"),
+                    cities = [...new Set(Store.jobs().map(j => j.city))];
+                s.innerHTML = '<option value="">Toutes les villes</option>' + cities.map(c => '<option value="' + c +
+                    '">' + c.charAt(0).toUpperCase() + c.slice(1) + "</option>").join(""); },
+            applyJob(id) { if (!Auth.isLoggedIn()) return toast("⚠️ Connectez-vous d'abord", "warn"); if (!Auth.user
+                    .profileComplete) return toast("⚠️ Complétez votre profil", "warn"); const j = Store.jobs().find(
+                    x => x.id === id); if (j) toast(I18N.t("toast.apply") + " " + j.title); },
+            applyVol(org) { if (!Auth.isLoggedIn()) return toast("⚠️ Connectez-vous d'abord", "warn");
+                toast(I18N.t("toast.volOk") + " " + org); }
+        };
+
+        function toast(m, t = "ok") { const c = document.getElementById("toast-container"),
+                d = document.createElement("div");
+            d.className = "toast-msg toast-" + t;
+            d.textContent = m;
+            c.appendChild(d);
+            setTimeout(() => d.remove(), 3000); }
+        document.addEventListener("DOMContentLoaded", () => App.init());
+    </script>
+</body>
+</html>
