@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Horizons d'Avenir - Opportunités pour Réfugiés</title>
+    <title>Nouvel horizon d'emploi - Opportunités pour Réfugiés</title>
     <meta name="description" content="Plateforme de formation et d'emploi pour réfugiés et migrants en France.">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
@@ -517,7 +517,7 @@
 
     <nav class="navbar">
         <div class="nav-inner">
-            <a href="#home" class="nav-brand"><i class="fas fa-globe-europe"></i> Horizons d'Avenir</a>
+            <a href="#home" class="nav-brand"><i class="fas fa-globe-europe"></i> Nouvel horizon d'emploi</a>
             <button class="nav-toggle" id="navToggle"><i class="fas fa-bars"></i></button>
             <div class="nav-menu" id="navMenu">
                 <ul class="nav-links">
@@ -551,7 +551,7 @@
         <section id="home" class="section">
             <div class="container">
                 <div class="hero">
-                    <h1>Bienvenue sur Horizons d'Avenir</h1>
+                    <h1>Bienvenue sur Nouvel horizon d'emploi</h1>
                     <p>Plateforme dédiée à l'insertion professionnelle des réfugiés et migrants en France.</p>
                     <div class="hero-btns">
                         <a href="#register" class="btn btn-primary"><i class="fas fa-user-plus"></i> Créer un compte</a>
@@ -681,11 +681,11 @@
 
     <footer class="footer">
         <div class="footer-grid">
-            <div><h4>Horizons d'Avenir</h4><p>📍 Paris, France</p><p>📞 +33 1 23 45 67 89</p></div>
+            <div><h4>Nouvel horizon d'emploi</h4><p>📍 Paris, France</p><p>📞 +33 1 23 45 67 89</p></div>
             <div><h4>Liens</h4><a href="#jobs">Emplois</a><a href="#training">Formations</a></div>
             <div><h4>Légal</h4><a href="#">Mentions</a><a href="#">RGPD</a></div>
         </div>
-        <p style="margin-top:1rem;font-size:.7rem;opacity:.7;">© 2024 Horizons d'Avenir - Conforme RGPD - France</p>
+        <p style="margin-top:1rem;font-size:.7rem;opacity:.7;">© 2024 Nouvel horizon d'emploi - Conforme RGPD - France</p>
     </footer>
 
     <div class="toast-container" id="toastContainer"></div>
@@ -695,31 +695,27 @@
         const DB = {
             get(k) { try { return JSON.parse(localStorage.getItem(k)); } catch (e) { return null; } },
             set(k, v) { localStorage.setItem(k, JSON.stringify(v)); },
-            users() { return this.get('users') || []; },
-            saveUsers(u) { this.set('users', u); },
-            jobs() { return this.get('jobs') || []; },
-            saveJobs(j) { this.set('jobs', j); },
-            videos() { return this.get('videos') || []; },
-            saveVideos(v) { this.set('videos', v); },
-            posters() { return this.get('posters') || []; },
-            savePosters(p) { this.set('posters', p); },
-            admins() { return this.get('admins') || ['mosab649@gmail.com']; },
-            saveAdmins(a) { this.set('admins', a); },
-            currentUser() { return this.get('currentUser'); },
-            saveCurrentUser(u) { this.set('currentUser', u); },
-            logout() { localStorage.removeItem('currentUser'); },
+            users() { return this.get('nhe_users') || []; },
+            saveUsers(u) { this.set('nhe_users', u); },
+            jobs() { return this.get('nhe_jobs') || []; },
+            saveJobs(j) { this.set('nhe_jobs', j); },
+            videos() { return this.get('nhe_videos') || []; },
+            saveVideos(v) { this.set('nhe_videos', v); },
+            posters() { return this.get('nhe_posters') || []; },
+            savePosters(p) { this.set('nhe_posters', p); },
+            admins() { return this.get('nhe_admins') || ['mosab649@gmail.com']; },
+            saveAdmins(a) { this.set('nhe_admins', a); },
+            currentUser() { return this.get('nhe_currentUser'); },
+            saveCurrentUser(u) { this.set('nhe_currentUser', u); },
+            logout() { localStorage.removeItem('nhe_currentUser'); },
 
             initData() {
                 if (this.jobs().length === 0) {
                     this.saveJobs([
-                        { id: 1, title: 'Aide Cuisinier', city: 'paris', contract: 'CDI',
-                            desc: 'Restaurant recherche aide cuisinier. Formation assurée.', date: '2024-01-15' },
-                        { id: 2, title: 'Agent Entretien', city: 'lyon', contract: 'CDD',
-                            desc: 'Nettoyage bureaux. Débutant accepté.', date: '2024-02-01' },
-                        { id: 3, title: 'Manutentionnaire', city: 'marseille', contract: 'Intérim',
-                            desc: 'Entrepôt logistique.', date: '2024-02-15' },
-                        { id: 4, title: 'Aide à domicile', city: 'paris', contract: 'CDI',
-                            desc: 'Aide aux personnes âgées.', date: '2024-03-01' }
+                        { id: 1, title: 'Aide Cuisinier', city: 'paris', contract: 'CDI', desc: 'Restaurant recherche aide cuisinier.', date: '2024-01-15' },
+                        { id: 2, title: 'Agent Entretien', city: 'lyon', contract: 'CDD', desc: 'Nettoyage bureaux.', date: '2024-02-01' },
+                        { id: 3, title: 'Manutentionnaire', city: 'marseille', contract: 'Intérim', desc: 'Entrepôt logistique.', date: '2024-02-15' },
+                        { id: 4, title: 'Aide à domicile', city: 'paris', contract: 'CDI', desc: 'Aide aux personnes âgées.', date: '2024-03-01' }
                     ]);
                 }
                 if (this.videos().length === 0) {
@@ -752,87 +748,62 @@
 
         function showSection(id) {
             var sections = document.querySelectorAll('main > section');
-            for (var i = 0; i < sections.length; i++) {
-                sections[i].classList.add('hidden');
-            }
+            for (var i = 0; i < sections.length; i++) sections[i].classList.add('hidden');
             var sec = document.getElementById(id);
-            if (sec) {
-                sec.classList.remove('hidden');
-                window.scrollTo({ top: sec.offsetTop - 80, behavior: 'smooth' });
-            }
-            // Update active nav link
+            if (sec) { sec.classList.remove('hidden');
+                window.scrollTo({ top: sec.offsetTop - 80, behavior: 'smooth' }); }
             var links = document.querySelectorAll('.nav-links a');
-            for (var j = 0; j < links.length; j++) {
-                links[j].classList.remove('active');
-            }
-            var activeLink = document.querySelector('.nav-links a[href="#' + id + '"]');
-            if (activeLink) activeLink.classList.add('active');
-            // Close mobile menu
+            for (var j = 0; j < links.length; j++) links[j].classList.remove('active');
+            var al = document.querySelector('.nav-links a[href="#' + id + '"]');
+            if (al) al.classList.add('active');
             document.getElementById('navMenu').classList.remove('open');
         }
 
         function isLoggedIn() { return !!DB.currentUser(); }
 
-        function isAdmin() {
-            var u = DB.currentUser();
-            return u && DB.admins().indexOf(u.email) !== -1;
-        }
+        function isAdmin() { var u = DB.currentUser(); return u && DB.admins().indexOf(u.email) !== -1; }
 
         function updateUI() {
-            var logged = isLoggedIn();
-            var admin = isAdmin();
+            var logged = isLoggedIn(),
+                admin = isAdmin();
             document.getElementById('btnLogin').classList.toggle('hidden', logged);
             document.getElementById('btnRegister').classList.toggle('hidden', logged);
             document.getElementById('btnLogout').classList.toggle('hidden', !logged);
             document.getElementById('adminLink').classList.toggle('hidden', !admin);
             var badge = document.getElementById('userBadge');
-            if (logged) {
-                badge.classList.remove('hidden');
-                badge.textContent = '👤 ' + DB.currentUser().name;
-            } else {
-                badge.classList.add('hidden');
-                badge.textContent = '';
-            }
+            if (logged) { badge.classList.remove('hidden');
+                badge.textContent = '👤 ' + DB.currentUser().name; } else { badge.classList.add('hidden');
+                badge.textContent = ''; }
         }
 
         // ============ AUTH ============
         function registerEmail(name, email, pass, pass2) {
-            if (pass !== pass2) { toast('❌ Les mots de passe ne correspondent pas', 'error'); return; }
-            if (pass.length < 6) { toast('❌ Mot de passe trop court (6 minimum)', 'error'); return; }
+            if (pass !== pass2) { toast('❌ Mots de passe différents', 'error'); return; }
+            if (pass.length < 6) { toast('❌ 6 caractères minimum', 'error'); return; }
+            if (DB.users().find(function(u) { return u.email === email; })) { toast('❌ Email déjà utilisé',
+                'error'); return; }
+            var user = { id: 'u' + Date.now(), name: name, email: email, password: pass, provider: 'email',
+            createdAt: new Date().toISOString() };
             var users = DB.users();
-            if (users.find(function(u) { return u.email === email; })) {
-                toast('❌ Cet email est déjà utilisé', 'error');
-                return;
-            }
-            var user = {
-                id: 'u' + Date.now(),
-                name: name,
-                email: email,
-                password: pass,
-                provider: 'email',
-                createdAt: new Date().toISOString()
-            };
             users.push(user);
             DB.saveUsers(users);
             DB.saveCurrentUser(user);
             updateUI();
-            toast('✅ Compte créé avec succès !');
+            toast('✅ Compte créé !');
             showSection('profile');
         }
 
         function registerSocial(provider, email, name) {
-            if (!email || !name) { toast('❌ Informations incomplètes', 'error'); return; }
+            if (!email || !name) { toast('❌ Infos incomplètes', 'error'); return; }
             var users = DB.users();
             var user = users.find(function(u) { return u.email === email; });
-            if (!user) {
-                user = { id: 'u' + Date.now(), name: name, email: email, provider: provider, createdAt: new Date()
+            if (!user) { user = { id: 'u' + Date.now(), name: name, email: email, provider: provider, createdAt: new Date()
                         .toISOString() };
                 users.push(user);
-                DB.saveUsers(users);
-            }
+                DB.saveUsers(users); }
             DB.saveCurrentUser(user);
             updateUI();
-            toast('✅ Connecté avec succès !');
+            toast('✅ Connecté !');
             showSection('profile');
         }
 
@@ -841,434 +812,250 @@
             if (!email) return;
             var pass = prompt('🔑 Mot de passe :');
             if (!pass) return;
-            // Check admin
             if (DB.admins().indexOf(email) !== -1 && pass === '123') {
                 var users = DB.users();
-                var adminUser = users.find(function(u) { return u.email === email; });
-                if (!adminUser) {
-                    adminUser = { id: 'admin', name: 'Administrateur', email: email, password: '123', provider: 'email',
+                var au = users.find(function(u) { return u.email === email; });
+                if (!au) { au = { id: 'admin', name: 'Administrateur', email: email, password: '123', provider: 'email',
                         status: 'admin', profileComplete: true, createdAt: new Date().toISOString() };
-                    users.push(adminUser);
-                    DB.saveUsers(users);
-                }
-                DB.saveCurrentUser(adminUser);
+                    users.push(au);
+                    DB.saveUsers(users); }
+                DB.saveCurrentUser(au);
                 updateUI();
-                toast('✅ Administrateur connecté !');
+                toast('✅ Admin connecté !');
                 return;
             }
-            // Check regular user
             var user = DB.users().find(function(u) { return u.email === email && u.password === pass; });
-            if (user) {
-                DB.saveCurrentUser(user);
+            if (user) { DB.saveCurrentUser(user);
                 updateUI();
-                toast('✅ Connecté avec succès !');
-            } else {
-                toast('❌ Email ou mot de passe incorrect', 'error');
-            }
+                toast('✅ Connecté !'); } else toast('❌ Identifiants incorrects', 'error');
         }
 
-        function logout() {
-            DB.logout();
+        function logout() { DB.logout();
             updateUI();
             toast('👋 Déconnecté');
-            showSection('home');
-        }
+            showSection('home'); }
 
-        function registerGoogle() {
-            window.open('https://accounts.google.com/signin', 'googleAuth', 'width=500,height=600');
-            toast('🔄 Connectez-vous sur Google puis cliquez sur OK');
-            setTimeout(function() {
-                var name = prompt('👤 Votre nom complet :');
-                var email = prompt('📧 Votre email Google :');
-                registerSocial('google', email, name);
-            }, 2000);
-        }
+        function registerGoogle() { window.open('https://accounts.google.com/signin', 'ga', 'width=500,height=600');
+            toast('🔄 Connectez-vous Google'); setTimeout(function() { var n = prompt('Nom complet :'); var e = prompt(
+                'Email Google :');
+                registerSocial('google', e, n); }, 2000); }
 
-        function registerFacebook() {
-            window.open('https://www.facebook.com/login', 'fbAuth', 'width=500,height=600');
-            toast('🔄 Connectez-vous sur Facebook puis cliquez sur OK');
-            setTimeout(function() {
-                var name = prompt('👤 Votre nom complet :');
-                var email = prompt('📧 Votre email Facebook :');
-                registerSocial('facebook', email, name);
-            }, 2000);
-        }
+        function registerFacebook() { window.open('https://facebook.com/login', 'fa', 'width=500,height=600');
+            toast('🔄 Connectez-vous Facebook'); setTimeout(function() { var n = prompt('Nom complet :'); var e = prompt(
+                'Email Facebook :');
+                registerSocial('facebook', e, n); }, 2000); }
 
-        function registerPhone() {
-            var phone = prompt('📱 Votre numéro (+33) :');
-            if (!phone) return;
-            var name = prompt('👤 Votre nom complet :');
-            registerSocial('phone', phone, name);
-        }
+        function registerPhone() { var p = prompt('📱 Téléphone (+33) :'); if (!p) return; var n = prompt(
+            'Nom complet :');
+            registerSocial('phone', p, n); }
 
-        function saveProfile(status, city, legal) {
-            var user = DB.currentUser();
-            if (!user) return;
-            user.status = status;
-            user.city = city;
-            user.legalStatus = legal;
-            user.profileComplete = true;
-            var users = DB.users();
-            var idx = users.findIndex(function(u) { return u.id === user.id; });
-            if (idx >= 0) users[idx] = user;
-            DB.saveUsers(users);
-            DB.saveCurrentUser(user);
+        function saveProfile(s, c, l) { var u = DB.currentUser(); if (!u) return;
+            u.status = s;
+            u.city = c;
+            u.legalStatus = l;
+            u.profileComplete = true; var us = DB.users(); var i = us.findIndex(function(x) { return x.id === u.id; }); if (
+                i >= 0) us[i] = u;
+            DB.saveUsers(us);
+            DB.saveCurrentUser(u);
             updateUI();
             toast('✅ Profil enregistré !');
-            showSection('jobs');
-        }
+            showSection('jobs'); }
 
-        // ============ RENDER JOBS ============
+        // ============ RENDER ============
         function renderJobs() {
-            var container = document.getElementById('jobsList');
-            if (!container) return;
-            var jobs = DB.jobs();
-            var cityFilter = document.getElementById('jobCity').value;
-            var contractFilter = document.getElementById('jobContract').value;
-            var search = document.getElementById('jobSearch').value.toLowerCase();
-            if (cityFilter) jobs = jobs.filter(function(j) { return j.city === cityFilter; });
-            if (contractFilter) jobs = jobs.filter(function(j) { return j.contract === contractFilter; });
-            if (search) jobs = jobs.filter(function(j) { return j.title.toLowerCase().indexOf(search) !== -1; });
-            if (jobs.length === 0) {
-                container.innerHTML = '<p class="loading">Aucune offre trouvée.</p>';
-                return;
-            }
-            container.innerHTML = jobs.map(function(j) {
-                return '<div class="job-card"><h4>' + j.title +
-                    '</h4><span class="badge badge-blue">📍 ' + j.city +
-                    '</span> <span class="badge badge-green">📄 ' + j.contract +
-                    '</span><p style="margin:.4rem 0;font-size:.85rem;">' + (j.desc || '') +
-                    '</p><small style="color:#999;">Publié le ' + j.date +
-                    '</small><br><button class="btn btn-primary btn-sm" style="margin-top:.4rem;" onclick="applyJob(' + j
-                    .id + ')">Postuler</button></div>';
-            }).join('');
-            populateCities();
-        }
+            var c = document.getElementById('jobsList');
+            if (!c) return;
+            var j = DB.jobs();
+            var cf = document.getElementById('jobCity').value;
+            var kf = document.getElementById('jobContract').value;
+            var sf = document.getElementById('jobSearch').value.toLowerCase();
+            if (cf) j = j.filter(function(x) { return x.city === cf; });
+            if (kf) j = j.filter(function(x) { return x.contract === kf; });
+            if (sf) j = j.filter(function(x) { return x.title.toLowerCase().indexOf(sf) !== -1; });
+            if (!j.length) { c.innerHTML = '<p class="loading">Aucune offre.</p>'; return; }
+            c.innerHTML = j.map(function(x) { return '<div class="job-card"><h4>' + x.title +
+                    '</h4><span class="badge badge-blue">📍 ' + x.city + '</span> <span class="badge badge-green">📄 ' + x
+                    .contract + '</span><p style="margin:.4rem 0;font-size:.85rem;">' + (x.desc || '') +
+                    '</p><small>Publié le ' + x.date +
+                    '</small><br><button class="btn btn-primary btn-sm" style="margin-top:.4rem;" onclick="applyJob(' + x
+                    .id + ')">Postuler</button></div>'; }).join('');
+            populateCities(); }
 
-        function renderVideos() {
-            var container = document.getElementById('videosList');
-            if (!container) return;
-            var videos = DB.videos();
-            if (videos.length === 0) {
-                container.innerHTML = '<p class="loading">Aucune vidéo.</p>';
-                return;
-            }
-            container.innerHTML = videos.map(function(v) {
-                return '<div class="card" style="cursor:pointer;" onclick="toast(\'🎬 ' + v.title +
-                    '\')"><i class="fas fa-play-circle" style="font-size:2rem;color:#764ba2;"></i><h4>' + v.title +
-                    '</h4><span class="badge badge-blue">' + v.cat +
-                    '</span> <span class="badge badge-green">🌐 ' + v.lang.toUpperCase() + '</span></div>';
-            }).join('');
-        }
+        function renderVideos() { var c = document.getElementById('videosList'); if (!c) return; var v = DB.videos(); if (!v
+                .length) { c.innerHTML = '<p class="loading">Aucune vidéo.</p>'; return; }
+            c.innerHTML = v.map(function(x) { return '<div class="card" onclick="toast(\'🎬 ' + x.title +
+                    '\')"><i class="fas fa-play-circle" style="font-size:2rem;color:#764ba2;"></i><h4>' + x.title +
+                    '</h4><span class="badge badge-blue">' + x.cat + '</span> <span class="badge badge-green">🌐 ' + x.lang
+                    .toUpperCase() + '</span></div>'; }).join(''); }
 
-        function renderPosters() {
-            var container = document.getElementById('postersList');
-            if (!container) return;
-            var posters = DB.posters();
-            container.innerHTML = posters.map(function(p) {
-                return '<div class="card" style="cursor:pointer;" onclick="toast(\'🖼️ ' + p.title +
-                    '\')"><i class="fas fa-image" style="font-size:2rem;color:#f5576c;"></i><h4>' + p.title +
-                    '</h4><span class="badge badge-blue">' + p.topic + '</span></div>';
-            }).join('');
-        }
+        function renderPosters() { var c = document.getElementById('postersList'); if (!c) return; var p = DB.posters();
+            c.innerHTML = p.map(function(x) { return '<div class="card" onclick="toast(\'🖼️ ' + x.title +
+                    '\')"><i class="fas fa-image" style="font-size:2rem;color:#f5576c;"></i><h4>' + x.title +
+                    '</h4><span class="badge badge-blue">' + x.topic + '</span></div>'; }).join(''); }
 
-        function renderVolunteering() {
-            var data = [
-                { org: 'Restos du Cœur', city: 'paris', task: 'Distribution alimentaire' },
-                { org: 'La Cimade', city: 'lyon', task: 'Accompagnement juridique' },
-                { org: 'Secours Populaire', city: 'marseille', task: 'Aide aux réfugiés' }
-            ];
-            document.getElementById('volList').innerHTML = data.map(function(v) {
-                return '<div class="job-card" style="border-left-color:var(--s)"><h4>' + v.org +
-                    '</h4><span class="badge badge-blue">📍 ' + v.city +
+        function renderVolunteering() { var d = [{ org: 'Restos du Cœur', city: 'paris',
+                task: 'Distribution alimentaire' }, { org: 'La Cimade', city: 'lyon',
+                task: 'Accompagnement juridique' }, { org: 'Secours Populaire', city: 'marseille',
+                task: 'Aide aux réfugiés' }];
+            document.getElementById('volList').innerHTML = d.map(function(v) { return '<div class="job-card" style="border-left-color:var(--s)"><h4>' +
+                    v.org + '</h4><span class="badge badge-blue">📍 ' + v.city +
                     '</span><p style="margin:.4rem 0;font-size:.85rem;">' + v.task +
-                    '</p><button class="btn btn-outline btn-sm" style="border-color:var(--s);color:var(--s)" onclick="volunteerSignup(\'' +
-                    v.org + '\')">Devenir bénévole</button></div>';
-            }).join('');
-        }
+                    '</p><button class="btn btn-outline btn-sm" style="border-color:var(--s);color:var(--s)" onclick="volSign(\'' +
+                    v.org + '\')">Devenir bénévole</button></div>'; }).join(''); }
 
-        function populateCities() {
-            var select = document.getElementById('jobCity');
-            if (!select) return;
-            var cities = DB.jobs().map(function(j) { return j.city; });
-            var uniqueCities = [];
-            for (var i = 0; i < cities.length; i++) {
-                if (uniqueCities.indexOf(cities[i]) === -1) uniqueCities.push(cities[i]);
-            }
-            select.innerHTML = '<option value="">Toutes villes</option>' + uniqueCities.map(function(c) {
-                return '<option value="' + c + '">' + c.charAt(0).toUpperCase() + c.slice(1) + '</option>';
-            }).join('');
-        }
+        function populateCities() { var s = document.getElementById('jobCity'); if (!s) return; var cs = DB.jobs().map(
+            function(j) { return j.city; }); var uc = [];
+            for (var i = 0; i < cs.length; i++) { if (uc.indexOf(cs[i]) === -1) uc.push(cs[i]); }
+            s.innerHTML = '<option value="">Toutes villes</option>' + uc.map(function(c) { return '<option value="' + c +
+                    '">' + c.charAt(0).toUpperCase() + c.slice(1) + '</option>'; }).join(''); }
 
-        function applyJob(id) {
-            if (!isLoggedIn()) { toast('⚠️ Veuillez vous connecter', 'warning');
+        function applyJob(id) { if (!isLoggedIn()) { toast('⚠️ Connectez-vous', 'warning');
+                showSection('register'); return; } if (!DB.currentUser().profileComplete) { toast(
+                    '⚠️ Complétez votre profil', 'warning');
+                showSection('profile'); return; } var j = DB.jobs().find(function(x) { return x.id === id; }); if (j) toast(
+                    '✅ Candidature : ' + j.title); }
+
+        function volSign(o) { if (!isLoggedIn()) { toast('⚠️ Connectez-vous', 'warning');
                 showSection('register'); return; }
-            if (!DB.currentUser().profileComplete) { toast('⚠️ Complétez votre profil', 'warning');
-                showSection('profile'); return; }
-            var job = DB.jobs().find(function(j) { return j.id === id; });
-            if (job) toast('✅ Candidature envoyée pour : ' + job.title);
-        }
+            toast('✅ Bénévole : ' + o); }
 
-        function volunteerSignup(org) {
-            if (!isLoggedIn()) { toast('⚠️ Veuillez vous connecter', 'warning');
-                showSection('register'); return; }
-            toast('✅ Inscription bénévole : ' + org);
-        }
-
-        function renderAll() {
-            renderJobs();
+        function renderAll() { renderJobs();
             renderVideos();
             renderPosters();
-            renderVolunteering();
-        }
+            renderVolunteering(); }
 
         // ============ ADMIN ============
         function renderAdmin(tab) {
-            var content = document.getElementById('adminContent');
-            if (!content) return;
-            var users = DB.users();
-            var jobs = DB.jobs();
-            var videos = DB.videos();
-            var posters = DB.posters();
-            var admins = DB.admins();
-
-            if (tab === 'dashboard') {
-                content.innerHTML =
-                    '<div class="stat-grid">' +
-                    '<div class="card"><div class="stat-num">' + users.length +
-                    '</div><div style="font-size:.8rem;color:#999;">Utilisateurs</div></div>' +
-                    '<div class="card"><div class="stat-num">' + jobs.length +
-                    '</div><div style="font-size:.8rem;color:#999;">Offres</div></div>' +
-                    '<div class="card"><div class="stat-num">' + videos.length +
-                    '</div><div style="font-size:.8rem;color:#999;">Vidéos</div></div>' +
-                    '<div class="card"><div class="stat-num">' + posters.length +
-                    '</div><div style="font-size:.8rem;color:#999;">Affiches</div></div>' +
-                    '</div>';
-            } else if (tab === 'users') {
-                content.innerHTML = '<table><tr><th>Nom</th><th>Email</th><th>Action</th></tr>' +
-                    users.map(function(u) {
-                        return '<tr><td>' + u.name + '</td><td>' + u.email +
-                            '</td><td><button class="btn btn-danger btn-sm" onclick="deleteUser(\'' + u.id +
-                            '\')">🗑️</button></td></tr>';
-                    }).join('') + '</table>';
-            } else if (tab === 'jobs-manage') {
-                content.innerHTML =
-                    '<button class="btn btn-primary btn-sm" onclick="addJob()" style="margin-bottom:.75rem;">+ Ajouter une offre</button>' +
-                    '<table><tr><th>Titre</th><th>Ville</th><th>Action</th></tr>' +
-                    jobs.map(function(j) {
-                        return '<tr><td>' + j.title + '</td><td>' + j.city +
-                            '</td><td><button class="btn btn-danger btn-sm" onclick="deleteJob(' + j.id +
-                            ')">🗑️</button></td></tr>';
-                    }).join('') + '</table>';
-            } else if (tab === 'videos-manage') {
-                content.innerHTML =
-                    '<button class="btn btn-primary btn-sm" onclick="addVideo()" style="margin-bottom:.75rem;">+ Ajouter une vidéo</button>' +
-                    '<table><tr><th>Titre</th><th>Catégorie</th><th>Action</th></tr>' +
-                    videos.map(function(v) {
-                        return '<tr><td>' + v.title + '</td><td>' + v.cat +
-                            '</td><td><button class="btn btn-danger btn-sm" onclick="deleteVideo(' + v.id +
-                            ')">🗑️</button></td></tr>';
-                    }).join('') + '</table>';
-            } else if (tab === 'posters-manage') {
-                content.innerHTML =
-                    '<button class="btn btn-primary btn-sm" onclick="addPoster()" style="margin-bottom:.75rem;">+ Ajouter une affiche</button>' +
-                    '<table><tr><th>Titre</th><th>Sujet</th><th>Action</th></tr>' +
-                    posters.map(function(p) {
-                        return '<tr><td>' + p.title + '</td><td>' + p.topic +
-                            '</td><td><button class="btn btn-danger btn-sm" onclick="deletePoster(' + p.id +
-                            ')">🗑️</button></td></tr>';
-                    }).join('') + '</table>';
-            } else if (tab === 'admins') {
-                content.innerHTML =
-                    '<button class="btn btn-primary btn-sm" onclick="addAdmin()" style="margin-bottom:.75rem;">+ Ajouter un admin</button>' +
-                    '<table><tr><th>Email</th><th>Action</th></tr>' +
-                    admins.map(function(a) {
-                        return '<tr><td>' + a + '</td><td>' + (a !== 'mosab649@gmail.com' ?
-                            '<button class="btn btn-danger btn-sm" onclick="removeAdmin(\'' + a +
-                            '\')">🗑️</button>' :
-                            '<span class="badge badge-blue">Principal</span>') + '</td></tr>';
-                    }).join('') + '</table>';
-            }
+            var c = document.getElementById('adminContent');
+            if (!c) return;
+            var us = DB.users(),
+                js = DB.jobs(),
+                vs = DB.videos(),
+                ps = DB.posters(),
+                ads = DB.admins();
+            if (tab === 'dashboard') c.innerHTML = '<div class="stat-grid">' + ['Utilisateurs', 'Offres', 'Vidéos',
+                'Affiches'
+            ].map(function(l, i) { return '<div class="card"><div class="stat-num">' + [us.length, js.length, vs
+                    .length, ps.length
+                ][i] + '</div><div style="font-size:.8rem;color:#999;">' + l + '</div></div>'; }).join('') + '</div>';
+            else if (tab === 'users') c.innerHTML = '<table><tr><th>Nom</th><th>Email</th><th>Action</th></tr>' + us.map(
+                function(u) { return '<tr><td>' + u.name + '</td><td>' + u.email +
+                    '</td><td><button class="btn btn-danger btn-sm" onclick="delU(\'' + u.id +
+                    '\')">🗑️</button></td></tr>'; }).join('') + '</table>';
+            else if (tab === 'jobs-manage') c.innerHTML =
+                '<button class="btn btn-primary btn-sm" onclick="addJ()" style="margin-bottom:.75rem;">+ Ajouter</button><table><tr><th>Titre</th><th>Ville</th><th>Action</th></tr>' +
+                js.map(function(j) { return '<tr><td>' + j.title + '</td><td>' + j.city +
+                    '</td><td><button class="btn btn-danger btn-sm" onclick="delJ(' + j.id +
+                    ')">🗑️</button></td></tr>'; }).join('') + '</table>';
+            else if (tab === 'videos-manage') c.innerHTML =
+                '<button class="btn btn-primary btn-sm" onclick="addV()" style="margin-bottom:.75rem;">+ Ajouter</button><table><tr><th>Titre</th><th>Cat</th><th>Action</th></tr>' +
+                vs.map(function(v) { return '<tr><td>' + v.title + '</td><td>' + v.cat +
+                    '</td><td><button class="btn btn-danger btn-sm" onclick="delV(' + v.id +
+                    ')">🗑️</button></td></tr>'; }).join('') + '</table>';
+            else if (tab === 'posters-manage') c.innerHTML =
+                '<button class="btn btn-primary btn-sm" onclick="addP()" style="margin-bottom:.75rem;">+ Ajouter</button><table><tr><th>Titre</th><th>Sujet</th><th>Action</th></tr>' +
+                ps.map(function(p) { return '<tr><td>' + p.title + '</td><td>' + p.topic +
+                    '</td><td><button class="btn btn-danger btn-sm" onclick="delP(' + p.id +
+                    ')">🗑️</button></td></tr>'; }).join('') + '</table>';
+            else if (tab === 'admins') c.innerHTML =
+                '<button class="btn btn-primary btn-sm" onclick="addA()" style="margin-bottom:.75rem;">+ Ajouter admin</button><table><tr><th>Email</th><th>Action</th></tr>' +
+                ads.map(function(a) { return '<tr><td>' + a + '</td><td>' + (a !== 'mosab649@gmail.com' ?
+                    '<button class="btn btn-danger btn-sm" onclick="remA(\'' + a + '\')">🗑️</button>' :
+                    '<span class="badge badge-blue">Principal</span>') + '</td></tr>'; }).join('') + '</table>';
         }
 
-        function deleteUser(id) {
-            if (!confirm('Supprimer cet utilisateur ?')) return;
+        function delU(id) { if (!confirm('Supprimer ?')) return;
             DB.saveUsers(DB.users().filter(function(u) { return u.id !== id; }));
             renderAdmin('users');
-            toast('🗑️ Utilisateur supprimé');
-        }
+            toast('🗑️ Supprimé'); }
 
-        function deleteJob(id) {
-            DB.saveJobs(DB.jobs().filter(function(j) { return j.id !== id; }));
+        function delJ(id) { DB.saveJobs(DB.jobs().filter(function(j) { return j.id !== id; }));
             renderAdmin('jobs-manage');
             renderJobs();
-            toast('🗑️ Offre supprimée');
-        }
+            toast('🗑️ Offre supprimée'); }
 
-        function deleteVideo(id) {
-            DB.saveVideos(DB.videos().filter(function(v) { return v.id !== id; }));
+        function delV(id) { DB.saveVideos(DB.videos().filter(function(v) { return v.id !== id; }));
             renderAdmin('videos-manage');
             renderVideos();
-            toast('🗑️ Vidéo supprimée');
-        }
+            toast('🗑️ Vidéo supprimée'); }
 
-        function deletePoster(id) {
-            DB.savePosters(DB.posters().filter(function(p) { return p.id !== id; }));
+        function delP(id) { DB.savePosters(DB.posters().filter(function(p) { return p.id !== id; }));
             renderAdmin('posters-manage');
             renderPosters();
-            toast('🗑️ Affiche supprimée');
-        }
+            toast('🗑️ Affiche supprimée'); }
 
-        function addJob() {
-            var title = prompt('Titre du poste :');
-            if (!title) return;
-            var city = prompt('Ville :');
-            if (!city) return;
-            var contract = prompt('Contrat (CDI/CDD/Intérim) :') || 'CDI';
-            var desc = prompt('Description :') || '';
-            var jobs = DB.jobs();
-            jobs.push({ id: Date.now(), title: title, city: city.toLowerCase(), contract: contract, desc: desc,
-                date: new Date().toISOString().split('T')[0] });
-            DB.saveJobs(jobs);
+        function addJ() { var t = prompt('Titre :'); if (!t) return; var c = prompt('Ville :'); if (!c) return; var k =
+                prompt('Contrat :') || 'CDI'; var d = prompt('Description :') || ''; var js = DB.jobs();
+            js.push({ id: Date.now(), title: t, city: c.toLowerCase(), contract: k, desc: d, date: new Date().toISOString()
+                    .split('T')[0] });
+            DB.saveJobs(js);
             renderAdmin('jobs-manage');
             renderJobs();
-            toast('✅ Offre ajoutée');
-        }
+            toast('✅ Offre ajoutée'); }
 
-        function addVideo() {
-            var title = prompt('Titre de la vidéo :');
-            if (!title) return;
-            var cat = prompt('Catégorie :') || 'Emploi';
-            var lang = prompt('Langue (fr/en/ar) :') || 'fr';
-            var videos = DB.videos();
-            videos.push({ id: Date.now(), title: title, cat: cat, lang: lang });
-            DB.saveVideos(videos);
+        function addV() { var t = prompt('Titre :'); if (!t) return; var c = prompt('Catégorie :') || 'Emploi'; var l =
+                prompt('Langue (fr/en/ar) :') || 'fr'; var vs = DB.videos();
+            vs.push({ id: Date.now(), title: t, cat: c, lang: l });
+            DB.saveVideos(vs);
             renderAdmin('videos-manage');
             renderVideos();
-            toast('✅ Vidéo ajoutée');
-        }
+            toast('✅ Vidéo ajoutée'); }
 
-        function addPoster() {
-            var title = prompt('Titre de l\'affiche :');
-            if (!title) return;
-            var topic = prompt('Sujet :') || 'Droits';
-            var posters = DB.posters();
-            posters.push({ id: Date.now(), title: title, topic: topic });
-            DB.savePosters(posters);
+        function addP() { var t = prompt('Titre :'); if (!t) return; var tp = prompt('Sujet :') || 'Droits'; var ps = DB
+                .posters();
+            ps.push({ id: Date.now(), title: t, topic: tp });
+            DB.savePosters(ps);
             renderAdmin('posters-manage');
             renderPosters();
-            toast('✅ Affiche ajoutée');
-        }
+            toast('✅ Affiche ajoutée'); }
 
-        function addAdmin() {
-            var email = prompt('Email du nouvel admin :');
-            if (!email) return;
-            var admins = DB.admins();
-            if (admins.indexOf(email) !== -1) { toast('⚠️ Déjà admin', 'warning'); return; }
-            admins.push(email);
-            DB.saveAdmins(admins);
+        function addA() { var e = prompt('Email admin :'); if (!e) return; var a = DB.admins(); if (a.indexOf(e) !== -1) { toast(
+                '⚠️ Déjà admin', 'warning'); return; }
+            a.push(e);
+            DB.saveAdmins(a);
             renderAdmin('admins');
-            toast('✅ Admin ajouté');
-        }
+            toast('✅ Admin ajouté'); }
 
-        function removeAdmin(email) {
-            if (email === 'mosab649@gmail.com') { toast('⚠️ Admin principal protégé', 'warning'); return; }
-            DB.saveAdmins(DB.admins().filter(function(a) { return a !== email; }));
+        function remA(e) { if (e === 'mosab649@gmail.com') { toast('⚠️ Protégé', 'warning'); return; }
+            DB.saveAdmins(DB.admins().filter(function(a) { return a !== e; }));
             renderAdmin('admins');
-            toast('🗑️ Admin supprimé');
-        }
+            toast('🗑️ Admin supprimé'); }
 
         // ============ INIT ============
         function init() {
             DB.initData();
             updateUI();
             renderAll();
-
-            // Language switcher
-            document.getElementById('langSwitch').addEventListener('change', function() {
-                var lang = this.value;
-                document.body.classList.toggle('rtl', lang === 'ar');
-                toast('🌐 Langue changée');
-            });
-
-            // Mobile nav toggle
-            document.getElementById('navToggle').addEventListener('click', function() {
-                document.getElementById('navMenu').classList.toggle('open');
-            });
-
-            // Login button
+            document.getElementById('langSwitch').addEventListener('change', function() { document.body.classList
+                    .toggle('rtl', this.value === 'ar');
+                toast('🌐 Langue changée'); });
+            document.getElementById('navToggle').addEventListener('click', function() { document.getElementById(
+                'navMenu').classList.toggle('open'); });
             document.getElementById('btnLogin').addEventListener('click', showLogin);
-
-            // Register button
-            document.getElementById('btnRegister').addEventListener('click', function() {
-                showSection('register');
-            });
-
-            // Logout button
+            document.getElementById('btnRegister').addEventListener('click', function() { showSection('register'); });
             document.getElementById('btnLogout').addEventListener('click', logout);
-
-            // Register form
-            document.getElementById('formRegister').addEventListener('submit', function(e) {
-                e.preventDefault();
-                registerEmail(
-                    document.getElementById('regName').value,
-                    document.getElementById('regEmail').value,
-                    document.getElementById('regPass').value,
-                    document.getElementById('regPass2').value
-                );
-            });
-
-            // Profile form
-            document.getElementById('formProfile').addEventListener('submit', function(e) {
-                e.preventDefault();
-                saveProfile(
-                    document.getElementById('profStatus').value,
-                    document.getElementById('profCity').value,
-                    document.getElementById('profLegal').value
-                );
-            });
-
-            // Job filters
+            document.getElementById('formRegister').addEventListener('submit', function(e) { e.preventDefault();
+                registerEmail(document.getElementById('regName').value, document.getElementById('regEmail').value,
+                    document.getElementById('regPass').value, document.getElementById('regPass2').value); });
+            document.getElementById('formProfile').addEventListener('submit', function(e) { e.preventDefault();
+                saveProfile(document.getElementById('profStatus').value, document.getElementById('profCity').value,
+                    document.getElementById('profLegal').value); });
             document.getElementById('jobSearch').addEventListener('input', renderJobs);
             document.getElementById('jobCity').addEventListener('change', renderJobs);
             document.getElementById('jobContract').addEventListener('change', renderJobs);
-
-            // Navigation links
-            var navLinks = document.querySelectorAll('.nav-links a');
-            for (var i = 0; i < navLinks.length; i++) {
-                navLinks[i].addEventListener('click', function(e) {
-                    e.preventDefault();
-                    var id = this.getAttribute('href').replace('#', '');
-                    if (id === 'admin' && !isAdmin()) {
-                        toast('⚠️ Accès réservé aux administrateurs', 'warning');
-                        return;
-                    }
-                    showSection(id);
-                    if (id === 'admin') renderAdmin('dashboard');
-                });
-            }
-
-            // Admin tabs
-            var adminTabs = document.querySelectorAll('.admin-tab');
-            for (var j = 0; j < adminTabs.length; j++) {
-                adminTabs[j].addEventListener('click', function() {
-                    var tabs = document.querySelectorAll('.admin-tab');
-                    for (var k = 0; k < tabs.length; k++) tabs[k].classList.remove('active');
-                    this.classList.add('active');
-                    renderAdmin(this.getAttribute('data-tab'));
-                });
-            }
-
-            // If user was logged in
-            if (isLoggedIn()) {
-                document.getElementById('register').classList.add('hidden');
-                document.getElementById('profile').classList.add('hidden');
-            }
-
-            console.log('✅ Horizons d\'Avenir - Prêt');
+            document.querySelectorAll('.nav-links a').forEach(function(a) { a.addEventListener('click', function(e) { e
+                    .preventDefault(); var id = this.getAttribute('href').replace('#', ''); if (id === 'admin' && !
+                    isAdmin()) { toast('⚠️ Accès réservé admin', 'warning'); return; }
+                showSection(id); if (id === 'admin') renderAdmin('dashboard'); }); });
+            document.querySelectorAll('.admin-tab').forEach(function(t) { t.addEventListener('click', function() { document
+                    .querySelectorAll('.admin-tab').forEach(function(x) { x.classList.remove('active'); });
+                this.classList.add('active');
+                renderAdmin(this.getAttribute('data-tab')); }); });
+            if (isLoggedIn()) { document.getElementById('register').classList.add('hidden');
+                document.getElementById('profile').classList.add('hidden'); }
+            console.log('✅ Nouvel horizon d\'emploi - Prêt');
             console.log('👤 Admin : mosab649@gmail.com / 123');
         }
-
         document.addEventListener('DOMContentLoaded', init);
     </script>
 </body>
