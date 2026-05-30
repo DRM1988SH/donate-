@@ -512,24 +512,23 @@
 </head>
 <body>
 
-    <div class="disclaimer-bar">⚠️ Nous ne soutenons pas l'immigration illégale - We do not support illegal immigration -
-    نحن لا ندعم الهجرة غير الشرعية</div>
+    <div class="disclaimer-bar" data-i18n="disc">⚠️ Nous ne soutenons pas l'immigration illégale - We do not support illegal immigration - نحن لا ندعم الهجرة غير الشرعية</div>
 
     <nav class="navbar">
         <div class="nav-inner">
-            <a href="#home" class="nav-brand"><i class="fas fa-globe-europe"></i> Nouvel horizon d'emploi</a>
+            <a href="#home" class="nav-brand"><i class="fas fa-globe-europe"></i> <span data-i18n="brand">Nouvel horizon d'emploi</span></a>
             <button class="nav-toggle" id="navToggle"><i class="fas fa-bars"></i></button>
             <div class="nav-menu" id="navMenu">
                 <ul class="nav-links">
-                    <li><a href="#home" class="active">Accueil</a></li>
-                    <li><a href="#register">Inscription</a></li>
-                    <li><a href="#jobs">Emplois</a></li>
-                    <li><a href="#training">Formations</a></li>
-                    <li><a href="#videos">Vidéos</a></li>
-                    <li><a href="#posters">Affiches</a></li>
-                    <li><a href="#volunteering">Bénévolat</a></li>
-                    <li><a href="#legal">Droit</a></li>
-                    <li><a href="#admin" id="adminLink" class="hidden">🔧 Admin</a></li>
+                    <li><a href="#home" class="active" data-i18n="nav.home">Accueil</a></li>
+                    <li><a href="#register" data-i18n="nav.register">Inscription</a></li>
+                    <li><a href="#jobs" data-i18n="nav.jobs">Emplois</a></li>
+                    <li><a href="#training" data-i18n="nav.training">Formations</a></li>
+                    <li><a href="#videos" data-i18n="nav.videos">Vidéos</a></li>
+                    <li><a href="#posters" data-i18n="nav.posters">Affiches</a></li>
+                    <li><a href="#volunteering" data-i18n="nav.volunteering">Bénévolat</a></li>
+                    <li><a href="#legal" data-i18n="nav.legal">Droit</a></li>
+                    <li><a href="#admin" id="adminLink" class="hidden">🔧 <span data-i18n="nav.admin">Admin</span></a></li>
                 </ul>
                 <div class="nav-actions">
                     <select id="langSwitch" style="padding:.3rem;border-radius:6px;border:1px solid #ccc;font-size:.8rem;">
@@ -537,526 +536,219 @@
                         <option value="en">🇬🇧 EN</option>
                         <option value="ar">🇸🇦 AR</option>
                     </select>
-                    <button class="btn btn-outline btn-sm" id="btnLogin"><i class="fas fa-sign-in-alt"></i> Connexion</button>
-                    <button class="btn btn-primary btn-sm" id="btnRegister"><i class="fas fa-user-plus"></i> Inscription</button>
+                    <button class="btn btn-outline btn-sm" id="btnLogin"><i class="fas fa-sign-in-alt"></i> <span data-i18n="auth.login">Connexion</span></button>
+                    <button class="btn btn-primary btn-sm" id="btnRegister"><i class="fas fa-user-plus"></i> <span data-i18n="auth.register">Inscription</span></button>
                     <span id="userBadge" class="hidden" style="font-weight:600;color:var(--p);font-size:.8rem;"></span>
-                    <button class="btn btn-outline btn-sm hidden" id="btnLogout"><i class="fas fa-sign-out-alt"></i> Déconnexion</button>
+                    <button class="btn btn-outline btn-sm hidden" id="btnLogout"><i class="fas fa-sign-out-alt"></i> <span data-i18n="auth.logout">Déconnexion</span></button>
                 </div>
             </div>
         </div>
     </nav>
 
     <main>
-        <!-- HOME -->
-        <section id="home" class="section">
-            <div class="container">
-                <div class="hero">
-                    <h1>Bienvenue sur Nouvel horizon d'emploi</h1>
-                    <p>Plateforme dédiée à l'insertion professionnelle des réfugiés et migrants en France.</p>
-                    <div class="hero-btns">
-                        <a href="#register" class="btn btn-primary"><i class="fas fa-user-plus"></i> Créer un compte</a>
-                        <a href="#jobs" class="btn btn-outline"><i class="fas fa-briefcase"></i> Voir les offres</a>
-                    </div>
-                </div>
-                <div class="grid-4">
-                    <div class="card"><i class="fas fa-briefcase"></i><h3>Emplois</h3><p>Offres dans votre ville</p></div>
-                    <div class="card"><i class="fas fa-graduation-cap"></i><h3>Formations</h3><p>Coursera, LinkedIn</p></div>
-                    <div class="card"><i class="fas fa-balance-scale"></i><h3>Droits</h3><p>CESEDA, CEAS</p></div>
-                    <div class="card"><i class="fas fa-video"></i><h3>Ressources</h3><p>Vidéos, affiches</p></div>
-                </div>
-            </div>
-        </section>
+        <section id="home" class="section"><div class="container"><div class="hero"><h1 data-i18n="home.title">Bienvenue sur Nouvel horizon d'emploi</h1><p data-i18n="home.sub">Plateforme dédiée à l'insertion professionnelle des réfugiés et migrants en France.</p><div class="hero-btns"><a href="#register" class="btn btn-primary"><i class="fas fa-user-plus"></i> <span data-i18n="home.cta1">Créer un compte</span></a><a href="#jobs" class="btn btn-outline"><i class="fas fa-briefcase"></i> <span data-i18n="home.cta2">Voir les offres</span></a></div></div><div class="grid-4"><div class="card"><i class="fas fa-briefcase"></i><h3 data-i18n="home.f1t">Emplois</h3><p data-i18n="home.f1d">Offres dans votre ville</p></div><div class="card"><i class="fas fa-graduation-cap"></i><h3 data-i18n="home.f2t">Formations</h3><p data-i18n="home.f2d">Coursera, LinkedIn</p></div><div class="card"><i class="fas fa-balance-scale"></i><h3 data-i18n="home.f3t">Droits</h3><p data-i18n="home.f3d">CESEDA, CEAS</p></div><div class="card"><i class="fas fa-video"></i><h3 data-i18n="home.f4t">Ressources</h3><p data-i18n="home.f4d">Vidéos, affiches</p></div></div></div></section>
 
-        <!-- REGISTER -->
-        <section id="register" class="section hidden">
-            <div class="container" style="max-width:450px">
-                <h2>Créer votre compte</h2>
-                <div class="social-btns">
-                    <button class="btn btn-google btn-block" onclick="registerGoogle()"><i class="fab fa-google"></i> Google</button>
-                    <button class="btn btn-facebook btn-block" onclick="registerFacebook()"><i class="fab fa-facebook-f"></i> Facebook</button>
-                </div>
-                <button class="btn btn-phone btn-block" style="margin-top:.5rem;" onclick="registerPhone()"><i class="fas fa-mobile-alt"></i> +33 Téléphone</button>
-                <div class="divider">ou par email</div>
-                <form id="formRegister" class="form-box">
-                    <input type="text" class="form-input" id="regName" placeholder="Nom complet" required>
-                    <input type="email" class="form-input" id="regEmail" placeholder="Email" required>
-                    <input type="password" class="form-input" id="regPass" placeholder="Mot de passe (6+)" required minlength="6">
-                    <input type="password" class="form-input" id="regPass2" placeholder="Confirmer mot de passe" required>
-                    <button type="submit" class="btn btn-primary btn-block">S'inscrire</button>
-                </form>
-                <p style="text-align:center;margin-top:.75rem;font-size:.85rem;">Déjà un compte ? <a href="#" onclick="showLogin()" style="color:var(--p);font-weight:600;">Se connecter</a></p>
-            </div>
-        </section>
+        <section id="register" class="section hidden"><div class="container" style="max-width:450px"><h2 data-i18n="reg.title">Créer votre compte</h2><div class="social-btns"><button class="btn btn-google btn-block" onclick="registerGoogle()"><i class="fab fa-google"></i> <span data-i18n="reg.google">Google</span></button><button class="btn btn-facebook btn-block" onclick="registerFacebook()"><i class="fab fa-facebook-f"></i> <span data-i18n="reg.facebook">Facebook</span></button></div><button class="btn btn-phone btn-block" style="margin-top:.5rem;" onclick="registerPhone()"><i class="fas fa-mobile-alt"></i> <span data-i18n="reg.phone">+33 Téléphone</span></button><div class="divider"><span data-i18n="reg.or">ou par email</span></div><form id="formRegister" class="form-box"><input type="text" class="form-input" id="regName" data-i18n-placeholder="reg.namePh" placeholder="Nom complet" required><input type="email" class="form-input" id="regEmail" placeholder="Email" required><input type="password" class="form-input" id="regPass" data-i18n-placeholder="reg.passPh" placeholder="Mot de passe (6+)" required minlength="6"><input type="password" class="form-input" id="regPass2" data-i18n-placeholder="reg.pass2Ph" placeholder="Confirmer mot de passe" required><button type="submit" class="btn btn-primary btn-block"><span data-i18n="reg.btn">S'inscrire</span></button></form><p style="text-align:center;margin-top:.75rem;font-size:.85rem;"><span data-i18n="reg.hasAccount">Déjà un compte ?</span> <a href="#" onclick="showLogin()" style="color:var(--p);font-weight:600;"><span data-i18n="reg.loginLink">Se connecter</span></a></p></div></section>
 
-        <!-- PROFILE -->
-        <section id="profile" class="section hidden">
-            <div class="container" style="max-width:450px">
-                <h2>Compléter votre profil</h2>
-                <form id="formProfile" class="form-box">
-                    <select class="form-select" id="profStatus" required><option value="">Statut *</option><option value="jobseeker">Demandeur d'emploi</option><option value="trainee">Stagiaire</option><option value="volunteer">Bénévole</option></select>
-                    <select class="form-select" id="profCity" required><option value="">Ville *</option><option>Paris</option><option>Lyon</option><option>Marseille</option><option>Lille</option><option>Strasbourg</option></select>
-                    <select class="form-select" id="profLegal"><option value="">Situation (confidentiel)</option><option value="asylum">Demandeur d'asile</option><option value="refugee">Réfugié</option><option value="undocumented">Sans papiers</option></select>
-                    <button type="submit" class="btn btn-primary btn-block">✓ Enregistrer</button>
-                </form>
-            </div>
-        </section>
+        <section id="profile" class="section hidden"><div class="container" style="max-width:450px"><h2 data-i18n="prof.title">Compléter votre profil</h2><form id="formProfile" class="form-box"><select class="form-select" id="profStatus" required><option value="" data-i18n="prof.statusPh">Statut *</option><option value="jobseeker" data-i18n="prof.jobseeker">Demandeur d'emploi</option><option value="trainee" data-i18n="prof.trainee">Stagiaire</option><option value="volunteer" data-i18n="prof.volunteer">Bénévole</option></select><select class="form-select" id="profCity" required><option value="" data-i18n="prof.cityPh">Ville *</option><option>Paris</option><option>Lyon</option><option>Marseille</option><option>Lille</option><option>Strasbourg</option></select><select class="form-select" id="profLegal"><option value="" data-i18n="prof.legalPh">Situation (confidentiel)</option><option value="asylum" data-i18n="prof.asylum">Demandeur d'asile</option><option value="refugee" data-i18n="prof.refugee">Réfugié</option><option value="undocumented" data-i18n="prof.undoc">Sans papiers</option></select><button type="submit" class="btn btn-primary btn-block"><span data-i18n="prof.save">✓ Enregistrer</span></button></form></div></section>
 
-        <!-- JOBS -->
-        <section id="jobs" class="section">
-            <div class="container">
-                <h2>Offres d'Emploi</h2>
-                <div class="filters">
-                    <input type="text" id="jobSearch" placeholder="🔍 Rechercher...">
-                    <select id="jobCity"><option value="">Toutes villes</option></select>
-                    <select id="jobContract"><option value="">Tous contrats</option><option>CDI</option><option>CDD</option><option>Intérim</option></select>
-                </div>
-                <div class="grid-2" id="jobsList"><p class="loading">Chargement...</p></div>
-            </div>
-        </section>
+        <section id="jobs" class="section"><div class="container"><h2 data-i18n="jobs.title">Offres d'Emploi</h2><div class="filters"><input type="text" id="jobSearch" data-i18n-placeholder="jobs.searchPh" placeholder="🔍 Rechercher..."><select id="jobCity"><option value="" data-i18n="jobs.allCities">Toutes villes</option></select><select id="jobContract"><option value="" data-i18n="jobs.allContracts">Tous contrats</option><option>CDI</option><option>CDD</option><option>Intérim</option></select></div><div class="grid-2" id="jobsList"><p class="loading" data-i18n="jobs.loading">Chargement...</p></div></div></section>
 
-        <!-- TRAINING -->
-        <section id="training" class="section">
-            <div class="container">
-                <h2>Formations</h2>
-                <div class="grid-3">
-                    <a href="https://coursera.org/refugees" target="_blank" class="card"><i class="fas fa-university"></i><h3>Coursera</h3><p>Cours gratuits</p></a>
-                    <a href="https://linkedin.com/learning" target="_blank" class="card"><i class="fab fa-linkedin"></i><h3>LinkedIn Learning</h3><p>Compétences pro</p></a>
-                    <a href="https://pole-emploi.fr" target="_blank" class="card"><i class="fas fa-building"></i><h3>Pôle Emploi</h3><p>Formations France</p></a>
-                </div>
-            </div>
-        </section>
+        <section id="training" class="section"><div class="container"><h2 data-i18n="train.title">Formations</h2><div class="grid-3"><a href="https://coursera.org/refugees" target="_blank" class="card"><i class="fas fa-university"></i><h3>Coursera</h3><p data-i18n="train.coursera">Cours gratuits</p></a><a href="https://linkedin.com/learning" target="_blank" class="card"><i class="fab fa-linkedin"></i><h3>LinkedIn Learning</h3><p data-i18n="train.linkedin">Compétences pro</p></a><a href="https://pole-emploi.fr" target="_blank" class="card"><i class="fas fa-building"></i><h3>Pôle Emploi</h3><p data-i18n="train.poleemploi">Formations France</p></a></div></div></section>
 
-        <!-- VIDEOS -->
-        <section id="videos" class="section">
-            <div class="container">
-                <h2>Vidéos Éducatives</h2>
-                <div class="grid-3" id="videosList"><p class="loading">Chargement...</p></div>
-            </div>
-        </section>
+        <section id="videos" class="section"><div class="container"><h2 data-i18n="vid.title">Vidéos Éducatives</h2><div class="grid-3" id="videosList"><p class="loading" data-i18n="vid.loading">Chargement...</p></div></div></section>
 
-        <!-- POSTERS -->
-        <section id="posters" class="section">
-            <div class="container">
-                <h2>Affiches</h2>
-                <div class="grid-3" id="postersList"><p class="loading">Chargement...</p></div>
-            </div>
-        </section>
+        <section id="posters" class="section"><div class="container"><h2 data-i18n="post.title">Affiches</h2><div class="grid-3" id="postersList"><p class="loading" data-i18n="post.loading">Chargement...</p></div></div></section>
 
-        <!-- VOLUNTEERING -->
-        <section id="volunteering" class="section">
-            <div class="container">
-                <h2>Bénévolat</h2>
-                <div class="grid-2" id="volList"><p class="loading">Chargement...</p></div>
-            </div>
-        </section>
+        <section id="volunteering" class="section"><div class="container"><h2 data-i18n="vol.title">Bénévolat</h2><div class="grid-2" id="volList"><p class="loading" data-i18n="vol.loading">Chargement...</p></div></div></section>
 
-        <!-- LEGAL -->
-        <section id="legal" class="section">
-            <div class="container">
-                <h2>Cadre Juridique</h2>
-                <div class="grid-3">
-                    <div class="card"><h3>🇫🇷 Loi Immigration</h3><p>CESEDA</p><a href="https://legifrance.gouv.fr" target="_blank" class="btn btn-outline btn-sm">Consulter →</a></div>
-                    <div class="card"><h3>🇪🇺 Politique UE</h3><p>CEAS</p><a href="https://home-affairs.ec.europa.eu" target="_blank" class="btn btn-outline btn-sm">Consulter →</a></div>
-                    <div class="card"><h3>🌍 Convention Genève</h3><p>1951</p><a href="https://unhcr.org/fr" target="_blank" class="btn btn-outline btn-sm">Consulter →</a></div>
-                </div>
-            </div>
-        </section>
+        <section id="legal" class="section"><div class="container"><h2 data-i18n="legal.title">Cadre Juridique</h2><div class="grid-3"><div class="card"><h3>🇫🇷 <span data-i18n="legal.fr">Loi Immigration</span></h3><p>CESEDA</p><a href="https://legifrance.gouv.fr" target="_blank" class="btn btn-outline btn-sm"><span data-i18n="legal.consult">Consulter →</span></a></div><div class="card"><h3>🇪🇺 <span data-i18n="legal.eu">Politique UE</span></h3><p>CEAS</p><a href="https://home-affairs.ec.europa.eu" target="_blank" class="btn btn-outline btn-sm"><span data-i18n="legal.consult">Consulter →</span></a></div><div class="card"><h3>🌍 <span data-i18n="legal.un">Convention Genève</span></h3><p>1951</p><a href="https://unhcr.org/fr" target="_blank" class="btn btn-outline btn-sm"><span data-i18n="legal.consult">Consulter →</span></a></div></div></div></section>
 
-        <!-- ADMIN -->
-        <section id="admin" class="section hidden">
-            <div class="container">
-                <h2>🔧 Administration</h2>
-                <div class="admin-tabs">
-                    <button class="admin-tab active" data-tab="dashboard">📊 Tableau</button>
-                    <button class="admin-tab" data-tab="users">👥 Utilisateurs</button>
-                    <button class="admin-tab" data-tab="jobs-manage">💼 Offres</button>
-                    <button class="admin-tab" data-tab="videos-manage">🎬 Vidéos</button>
-                    <button class="admin-tab" data-tab="posters-manage">🖼️ Affiches</button>
-                    <button class="admin-tab" data-tab="admins">🛡️ Admins</button>
-                </div>
-                <div class="admin-content" id="adminContent"></div>
-            </div>
-        </section>
+        <section id="admin" class="section hidden"><div class="container"><h2>🔧 <span data-i18n="admin.title">Administration</span></h2><div class="admin-tabs"><button class="admin-tab active" data-tab="dashboard">📊 <span data-i18n="admin.dashboard">Tableau</span></button><button class="admin-tab" data-tab="users">👥 <span data-i18n="admin.users">Utilisateurs</span></button><button class="admin-tab" data-tab="jobs-manage">💼 <span data-i18n="admin.jobs">Offres</span></button><button class="admin-tab" data-tab="videos-manage">🎬 <span data-i18n="admin.videos">Vidéos</span></button><button class="admin-tab" data-tab="posters-manage">🖼️ <span data-i18n="admin.posters">Affiches</span></button><button class="admin-tab" data-tab="admins">🛡️ <span data-i18n="admin.admins">Admins</span></button></div><div class="admin-content" id="adminContent"></div></div></section>
     </main>
 
-    <footer class="footer">
-        <div class="footer-grid">
-            <div><h4>Nouvel horizon d'emploi</h4><p>📍 Paris, France</p><p>📞 +33 1 23 45 67 89</p></div>
-            <div><h4>Liens</h4><a href="#jobs">Emplois</a><a href="#training">Formations</a></div>
-            <div><h4>Légal</h4><a href="#">Mentions</a><a href="#">RGPD</a></div>
-        </div>
-        <p style="margin-top:1rem;font-size:.7rem;opacity:.7;">© 2024 Nouvel horizon d'emploi - Conforme RGPD - France</p>
-    </footer>
+    <footer class="footer"><div class="footer-grid"><div><h4>Nouvel horizon d'emploi</h4><p>📍 Paris, France</p><p>📞 +33 1 23 45 67 89</p></div><div><h4 data-i18n="ft.links">Liens</h4><a href="#jobs"><span data-i18n="ft.jobs">Emplois</span></a><a href="#training"><span data-i18n="ft.training">Formations</span></a></div><div><h4 data-i18n="ft.legal">Légal</h4><a href="#"><span data-i18n="ft.mentions">Mentions</span></a><a href="#"><span data-i18n="ft.rgpd">RGPD</span></a></div></div><p style="margin-top:1rem;font-size:.7rem;opacity:.7;">© 2024 Nouvel horizon d'emploi - <span data-i18n="ft.rgpd2">Conforme RGPD</span> - France</p></footer>
 
     <div class="toast-container" id="toastContainer"></div>
 
     <script>
-        // ============ DATA STORE ============
-        const DB = {
-            get(k) { try { return JSON.parse(localStorage.getItem(k)); } catch (e) { return null; } },
-            set(k, v) { localStorage.setItem(k, JSON.stringify(v)); },
-            users() { return this.get('nhe_users') || []; },
-            saveUsers(u) { this.set('nhe_users', u); },
-            jobs() { return this.get('nhe_jobs') || []; },
-            saveJobs(j) { this.set('nhe_jobs', j); },
-            videos() { return this.get('nhe_videos') || []; },
-            saveVideos(v) { this.set('nhe_videos', v); },
-            posters() { return this.get('nhe_posters') || []; },
-            savePosters(p) { this.set('nhe_posters', p); },
-            admins() { return this.get('nhe_admins') || ['mosab649@gmail.com']; },
-            saveAdmins(a) { this.set('nhe_admins', a); },
-            currentUser() { return this.get('nhe_currentUser'); },
-            saveCurrentUser(u) { this.set('nhe_currentUser', u); },
-            logout() { localStorage.removeItem('nhe_currentUser'); },
-
-            initData() {
-                if (this.jobs().length === 0) {
-                    this.saveJobs([
-                        { id: 1, title: 'Aide Cuisinier', city: 'paris', contract: 'CDI', desc: 'Restaurant recherche aide cuisinier.', date: '2024-01-15' },
-                        { id: 2, title: 'Agent Entretien', city: 'lyon', contract: 'CDD', desc: 'Nettoyage bureaux.', date: '2024-02-01' },
-                        { id: 3, title: 'Manutentionnaire', city: 'marseille', contract: 'Intérim', desc: 'Entrepôt logistique.', date: '2024-02-15' },
-                        { id: 4, title: 'Aide à domicile', city: 'paris', contract: 'CDI', desc: 'Aide aux personnes âgées.', date: '2024-03-01' }
-                    ]);
-                }
-                if (this.videos().length === 0) {
-                    this.saveVideos([
-                        { id: 1, title: 'Vos droits en France', cat: 'Juridique', lang: 'fr' },
-                        { id: 2, title: 'Rédiger un CV', cat: 'Emploi', lang: 'fr' },
-                        { id: 3, title: 'Préparer un entretien', cat: 'Emploi', lang: 'fr' }
-                    ]);
-                }
-                if (this.posters().length === 0) {
-                    this.savePosters([
-                        { id: 1, title: 'Connaissez vos droits', topic: 'Droits' },
-                        { id: 2, title: 'Numéros urgence', topic: 'Urgence' },
-                        { id: 3, title: 'Accès aux soins', topic: 'Santé' }
-                    ]);
-                }
+    // ============ INTERNATIONALISATION (i18n) ============
+    const I18N = {
+        lang: localStorage.getItem('nhe_lang') || 'fr',
+        data: {
+            fr: {
+                disc: "⚠️ Nous ne soutenons pas l'immigration illégale - We do not support illegal immigration - نحن لا ندعم الهجرة غير الشرعية",
+                brand: "Nouvel horizon d'emploi",
+                nav: { home: "Accueil", register: "Inscription", jobs: "Emplois", training: "Formations", videos: "Vidéos", posters: "Affiches", volunteering: "Bénévolat", legal: "Droit", admin: "Admin" },
+                auth: { login: "Connexion", register: "Inscription", logout: "Déconnexion" },
+                home: { title: "Bienvenue sur Nouvel horizon d'emploi", sub: "Plateforme dédiée à l'insertion professionnelle des réfugiés et migrants en France.", cta1: "Créer un compte", cta2: "Voir les offres", f1t: "Emplois", f1d: "Offres dans votre ville", f2t: "Formations", f2d: "Coursera, LinkedIn", f3t: "Droits", f3d: "CESEDA, CEAS", f4t: "Ressources", f4d: "Vidéos, affiches" },
+                reg: { title: "Créer votre compte", google: "Google", facebook: "Facebook", phone: "+33 Téléphone", or: "ou par email", namePh: "Nom complet", passPh: "Mot de passe (6+)", pass2Ph: "Confirmer mot de passe", btn: "S'inscrire", hasAccount: "Déjà un compte ?", loginLink: "Se connecter" },
+                prof: { title: "Compléter votre profil", statusPh: "Statut *", jobseeker: "Demandeur d'emploi", trainee: "Stagiaire", volunteer: "Bénévole", cityPh: "Ville *", legalPh: "Situation (confidentiel)", asylum: "Demandeur d'asile", refugee: "Réfugié", undoc: "Sans papiers", save: "✓ Enregistrer" },
+                jobs: { title: "Offres d'Emploi", searchPh: "🔍 Rechercher...", allCities: "Toutes villes", allContracts: "Tous contrats", loading: "Chargement...", noResults: "Aucune offre trouvée.", apply: "Postuler", published: "Publié le" },
+                train: { title: "Formations", coursera: "Cours gratuits pour réfugiés", linkedin: "Compétences professionnelles", poleemploi: "Formations officielles France" },
+                vid: { title: "Vidéos Éducatives", loading: "Chargement...", noVideos: "Aucune vidéo disponible." },
+                post: { title: "Affiches Informatives", loading: "Chargement..." },
+                vol: { title: "Bénévolat", loading: "Chargement...", btn: "Devenir bénévole" },
+                legal: { title: "Cadre Juridique", fr: "Loi Immigration France", eu: "Politique Européenne", un: "Convention de Genève", consult: "Consulter →" },
+                admin: { title: "Administration", dashboard: "Tableau de bord", users: "Utilisateurs", jobs: "Offres", videos: "Vidéos", posters: "Affiches", admins: "Administrateurs" },
+                ft: { links: "Liens rapides", jobs: "Emplois", training: "Formations", legal: "Légal", mentions: "Mentions légales", rgpd: "RGPD", rgpd2: "Conforme RGPD" },
+                toast: { regOk: "✅ Compte créé avec succès !", profOk: "✅ Profil enregistré !", loginOk: "✅ Connecté avec succès !", loginErr: "❌ Email ou mot de passe incorrect", logoutOk: "👋 Déconnecté", applyOk: "✅ Candidature envoyée pour : ", jobAdd: "✅ Offre ajoutée", jobDel: "🗑️ Offre supprimée", vidAdd: "✅ Vidéo ajoutée", vidDel: "🗑️ Vidéo supprimée", postAdd: "✅ Affiche ajoutée", postDel: "🗑️ Affiche supprimée", adminAdd: "✅ Administrateur ajouté", adminRem: "🗑️ Administrateur supprimé", userDel: "🗑️ Utilisateur supprimé", lang: "🌐 Langue : Français", loginReq: "⚠️ Veuillez vous connecter", profReq: "⚠️ Complétez votre profil", passMatch: "❌ Les mots de passe ne correspondent pas", emailUsed: "❌ Cet email est déjà utilisé", adminOnly: "⚠️ Accès réservé aux administrateurs", volunteerOk: "✅ Inscription bénévole : " }
+            },
+            en: {
+                disc: "⚠️ Nous ne soutenons pas l'immigration illégale - We do not support illegal immigration - نحن لا ندعم الهجرة غير الشرعية",
+                brand: "Nouvel horizon d'emploi",
+                nav: { home: "Home", register: "Register", jobs: "Jobs", training: "Training", videos: "Videos", posters: "Posters", volunteering: "Volunteering", legal: "Law", admin: "Admin" },
+                auth: { login: "Login", register: "Register", logout: "Logout" },
+                home: { title: "Welcome to Nouvel horizon d'emploi", sub: "Platform for professional integration of refugees and migrants in France.", cta1: "Create account", cta2: "View jobs", f1t: "Jobs", f1d: "Offers in your city", f2t: "Training", f2d: "Coursera, LinkedIn", f3t: "Rights", f3d: "CESEDA, CEAS", f4t: "Resources", f4d: "Videos, posters" },
+                reg: { title: "Create your account", google: "Google", facebook: "Facebook", phone: "+33 Phone", or: "or by email", namePh: "Full name", passPh: "Password (6+)", pass2Ph: "Confirm password", btn: "Register", hasAccount: "Already have an account?", loginLink: "Login" },
+                prof: { title: "Complete your profile", statusPh: "Status *", jobseeker: "Job seeker", trainee: "Trainee", volunteer: "Volunteer", cityPh: "City *", legalPh: "Legal situation (confidential)", asylum: "Asylum seeker", refugee: "Refugee", undoc: "Undocumented", save: "✓ Save" },
+                jobs: { title: "Job Offers", searchPh: "🔍 Search...", allCities: "All cities", allContracts: "All contracts", loading: "Loading...", noResults: "No jobs found.", apply: "Apply", published: "Published" },
+                train: { title: "Training", coursera: "Free courses for refugees", linkedin: "Professional skills", poleemploi: "Official French training" },
+                vid: { title: "Educational Videos", loading: "Loading...", noVideos: "No videos available." },
+                post: { title: "Informative Posters", loading: "Loading..." },
+                vol: { title: "Volunteering", loading: "Loading...", btn: "Become a volunteer" },
+                legal: { title: "Legal Framework", fr: "French Immigration Law", eu: "European Policy", un: "Geneva Convention", consult: "Consult →" },
+                admin: { title: "Administration", dashboard: "Dashboard", users: "Users", jobs: "Jobs", videos: "Videos", posters: "Posters", admins: "Administrators" },
+                ft: { links: "Quick links", jobs: "Jobs", training: "Training", legal: "Legal", mentions: "Legal notices", rgpd: "GDPR", rgpd2: "GDPR Compliant" },
+                toast: { regOk: "✅ Account created!", profOk: "✅ Profile saved!", loginOk: "✅ Logged in!", loginErr: "❌ Wrong email or password", logoutOk: "👋 Logged out", applyOk: "✅ Applied for: ", jobAdd: "✅ Job added", jobDel: "🗑️ Job deleted", vidAdd: "✅ Video added", vidDel: "🗑️ Video deleted", postAdd: "✅ Poster added", postDel: "🗑️ Poster deleted", adminAdd: "✅ Admin added", adminRem: "🗑️ Admin removed", userDel: "🗑️ User deleted", lang: "🌐 Language: English", loginReq: "⚠️ Please login", profReq: "⚠️ Complete your profile", passMatch: "❌ Passwords don't match", emailUsed: "❌ Email already used", adminOnly: "⚠️ Admin access only", volunteerOk: "✅ Volunteer: " }
+            },
+            ar: {
+                disc: "⚠️ Nous ne soutenons pas l'immigration illégale - We do not support illegal immigration - نحن لا ندعم الهجرة غير الشرعية",
+                brand: "أفق جديد للتوظيف",
+                nav: { home: "الرئيسية", register: "التسجيل", jobs: "الوظائف", training: "التدريبات", videos: "الفيديوهات", posters: "الملصقات", volunteering: "التطوع", legal: "القانون", admin: "الإدارة" },
+                auth: { login: "تسجيل الدخول", register: "إنشاء حساب", logout: "تسجيل الخروج" },
+                home: { title: "مرحباً بكم في أفق جديد للتوظيف", sub: "منصة مخصصة للإدماج المهني للاجئين والمهاجرين في فرنسا.", cta1: "إنشاء حساب", cta2: "تصفح العروض", f1t: "الوظائف", f1d: "عروض في مدينتك", f2t: "التدريبات", f2d: "كورسيرا، لينكدإن", f3t: "الحقوق", f3d: "CESEDA, CEAS", f4t: "الموارد", f4d: "فيديوهات، ملصقات" },
+                reg: { title: "إنشاء حسابك", google: "جوجل", facebook: "فيسبوك", phone: "+33 هاتف", or: "أو عبر البريد الإلكتروني", namePh: "الاسم الكامل", passPh: "كلمة المرور (6+)", pass2Ph: "تأكيد كلمة المرور", btn: "تسجيل", hasAccount: "لديك حساب بالفعل؟", loginLink: "تسجيل الدخول" },
+                prof: { title: "أكمل ملفك الشخصي", statusPh: "الحالة *", jobseeker: "باحث عن عمل", trainee: "متدرب", volunteer: "متطوع", cityPh: "المدينة *", legalPh: "الوضع القانوني (سري)", asylum: "طالب لجوء", refugee: "لاجئ", undoc: "بدون أوراق", save: "✓ حفظ" },
+                jobs: { title: "عروض العمل", searchPh: "🔍 بحث...", allCities: "جميع المدن", allContracts: "جميع العقود", loading: "جاري التحميل...", noResults: "لا توجد عروض عمل.", apply: "تقديم", published: "نُشر بتاريخ" },
+                train: { title: "التدريبات", coursera: "دورات مجانية للاجئين", linkedin: "مهارات مهنية", poleemploi: "تدريبات رسمية في فرنسا" },
+                vid: { title: "فيديوهات تعليمية", loading: "جاري التحميل...", noVideos: "لا توجد فيديوهات متاحة." },
+                post: { title: "ملصقات توعوية", loading: "جاري التحميل..." },
+                vol: { title: "التطوع", loading: "جاري التحميل...", btn: "كن متطوعاً" },
+                legal: { title: "الإطار القانوني", fr: "قانون الهجرة الفرنسي", eu: "السياسة الأوروبية", un: "اتفاقية جنيف", consult: "استشارة ←" },
+                admin: { title: "الإدارة", dashboard: "لوحة القيادة", users: "المستخدمين", jobs: "الوظائف", videos: "الفيديوهات", posters: "الملصقات", admins: "المدراء" },
+                ft: { links: "روابط سريعة", jobs: "الوظائف", training: "التدريبات", legal: "قانوني", mentions: "إشعارات قانونية", rgpd: "اللائحة العامة لحماية البيانات", rgpd2: "متوافقة مع RGPD" },
+                toast: { regOk: "✅ تم إنشاء الحساب بنجاح!", profOk: "✅ تم حفظ الملف الشخصي!", loginOk: "✅ تم تسجيل الدخول!", loginErr: "❌ بريد إلكتروني أو كلمة مرور خاطئة", logoutOk: "👋 تم تسجيل الخروج", applyOk: "✅ تم التقديم على: ", jobAdd: "✅ تمت إضافة الوظيفة", jobDel: "🗑️ تم حذف الوظيفة", vidAdd: "✅ تمت إضافة الفيديو", vidDel: "🗑️ تم حذف الفيديو", postAdd: "✅ تمت إضافة الملصق", postDel: "🗑️ تم حذف الملصق", adminAdd: "✅ تمت إضافة المدير", adminRem: "🗑️ تم حذف المدير", userDel: "🗑️ تم حذف المستخدم", lang: "🌐 اللغة: العربية", loginReq: "⚠️ يرجى تسجيل الدخول", profReq: "⚠️ أكمل ملفك الشخصي", passMatch: "❌ كلمتا المرور غير متطابقتين", emailUsed: "❌ البريد الإلكتروني مستخدم بالفعل", adminOnly: "⚠️ يقتصر الوصول على المدراء", volunteerOk: "✅ تطوع: " }
             }
-        };
+        },
+        t(key) { var keys = key.split('.'); var val = this.data[this.lang]; for (var i = 0; i < keys.length; i++) { if (val && val[keys[i]] !== undefined) val = val[keys[i]]; else return key; } return val; },
+        apply() {
+            document.documentElement.lang = this.lang;
+            document.body.classList.toggle('rtl', this.lang === 'ar');
+            var els = document.querySelectorAll('[data-i18n]');
+            for (var i = 0; i < els.length; i++) { els[i].textContent = this.t(els[i].getAttribute('data-i18n')); }
+            var phs = document.querySelectorAll('[data-i18n-placeholder]');
+            for (var j = 0; j < phs.length; j++) { phs[j].placeholder = this.t(phs[j].getAttribute('data-i18n-placeholder')); }
+            document.getElementById('langSwitch').value = this.lang;
+        },
+        switchLang(lg) { this.lang = lg; localStorage.setItem('nhe_lang', lg); this.apply(); renderAll(); if (typeof toast === 'function') toast(this.t('toast.lang')); }
+    };
 
-        // ============ UI HELPERS ============
-        function toast(msg, type) {
-            type = type || 'success';
-            var c = document.getElementById('toastContainer');
-            var t = document.createElement('div');
-            t.className = 'toast toast-' + type;
-            t.textContent = msg;
-            c.appendChild(t);
-            setTimeout(function() { t.remove(); }, 3000);
+    // ============ DATA STORE ============
+    const DB = {
+        get(k) { try { return JSON.parse(localStorage.getItem('nhe_' + k)); } catch (e) { return null; } },
+        set(k, v) { localStorage.setItem('nhe_' + k, JSON.stringify(v)); },
+        users() { return this.get('users') || []; },
+        saveUsers(u) { this.set('users', u); },
+        jobs() { return this.get('jobs') || []; },
+        saveJobs(j) { this.set('jobs', j); },
+        videos() { return this.get('videos') || []; },
+        saveVideos(v) { this.set('videos', v); },
+        posters() { return this.get('posters') || []; },
+        savePosters(p) { this.set('posters', p); },
+        admins() { return this.get('admins') || ['mosab649@gmail.com']; },
+        saveAdmins(a) { this.set('admins', a); },
+        currentUser() { return this.get('cu'); },
+        saveCurrentUser(u) { this.set('cu', u); },
+        logout() { localStorage.removeItem('nhe_cu'); },
+        initData() {
+            if (!this.jobs().length) this.saveJobs([{ id: 1, title: 'Aide Cuisinier', city: 'paris', contract: 'CDI', desc: 'Restaurant recherche aide cuisinier.', date: '2024-01-15' }, { id: 2, title: 'Agent Entretien', city: 'lyon', contract: 'CDD', desc: 'Nettoyage bureaux.', date: '2024-02-01' }, { id: 3, title: 'Manutentionnaire', city: 'marseille', contract: 'Intérim', desc: 'Entrepôt logistique.', date: '2024-02-15' }, { id: 4, title: 'Aide à domicile', city: 'paris', contract: 'CDI', desc: 'Aide aux personnes âgées.', date: '2024-03-01' }]);
+            if (!this.videos().length) this.saveVideos([{ id: 1, title: 'Vos droits en France', cat: 'Juridique', lang: 'fr' }, { id: 2, title: 'Rédiger un CV', cat: 'Emploi', lang: 'fr' }, { id: 3, title: 'Préparer un entretien', cat: 'Emploi', lang: 'fr' }]);
+            if (!this.posters().length) this.savePosters([{ id: 1, title: 'Connaissez vos droits', topic: 'Droits' }, { id: 2, title: 'Numéros urgence', topic: 'Urgence' }, { id: 3, title: 'Accès aux soins', topic: 'Santé' }]);
         }
+    };
 
-        function showSection(id) {
-            var sections = document.querySelectorAll('main > section');
-            for (var i = 0; i < sections.length; i++) sections[i].classList.add('hidden');
-            var sec = document.getElementById(id);
-            if (sec) { sec.classList.remove('hidden');
-                window.scrollTo({ top: sec.offsetTop - 80, behavior: 'smooth' }); }
-            var links = document.querySelectorAll('.nav-links a');
-            for (var j = 0; j < links.length; j++) links[j].classList.remove('active');
-            var al = document.querySelector('.nav-links a[href="#' + id + '"]');
-            if (al) al.classList.add('active');
-            document.getElementById('navMenu').classList.remove('open');
-        }
+    // ============ UI ============
+    function toast(msg, type) { type = type || 'success'; var c = document.getElementById('toastContainer'); var t = document.createElement('div'); t.className = 'toast toast-' + type; t.textContent = msg; c.appendChild(t); setTimeout(function() { t.remove(); }, 3000); }
 
-        function isLoggedIn() { return !!DB.currentUser(); }
+    function showSection(id) { var ss = document.querySelectorAll('main > section'); for (var i = 0; i < ss.length; i++) ss[i].classList.add('hidden'); var s = document.getElementById(id); if (s) { s.classList.remove('hidden'); window.scrollTo({ top: s.offsetTop - 80, behavior: 'smooth' }); } var ls = document.querySelectorAll('.nav-links a'); for (var j = 0; j < ls.length; j++) ls[j].classList.remove('active'); var al = document.querySelector('.nav-links a[href="#' + id + '"]'); if (al) al.classList.add('active'); document.getElementById('navMenu').classList.remove('open'); }
 
-        function isAdmin() { var u = DB.currentUser(); return u && DB.admins().indexOf(u.email) !== -1; }
+    function isLoggedIn() { return !!DB.currentUser(); }
 
-        function updateUI() {
-            var logged = isLoggedIn(),
-                admin = isAdmin();
-            document.getElementById('btnLogin').classList.toggle('hidden', logged);
-            document.getElementById('btnRegister').classList.toggle('hidden', logged);
-            document.getElementById('btnLogout').classList.toggle('hidden', !logged);
-            document.getElementById('adminLink').classList.toggle('hidden', !admin);
-            var badge = document.getElementById('userBadge');
-            if (logged) { badge.classList.remove('hidden');
-                badge.textContent = '👤 ' + DB.currentUser().name; } else { badge.classList.add('hidden');
-                badge.textContent = ''; }
-        }
+    function isAdmin() { var u = DB.currentUser(); return u && DB.admins().indexOf(u.email) !== -1; }
 
-        // ============ AUTH ============
-        function registerEmail(name, email, pass, pass2) {
-            if (pass !== pass2) { toast('❌ Mots de passe différents', 'error'); return; }
-            if (pass.length < 6) { toast('❌ 6 caractères minimum', 'error'); return; }
-            if (DB.users().find(function(u) { return u.email === email; })) { toast('❌ Email déjà utilisé',
-                'error'); return; }
-            var user = { id: 'u' + Date.now(), name: name, email: email, password: pass, provider: 'email',
-            createdAt: new Date().toISOString() };
-            var users = DB.users();
-            users.push(user);
-            DB.saveUsers(users);
-            DB.saveCurrentUser(user);
-            updateUI();
-            toast('✅ Compte créé !');
-            showSection('profile');
-        }
+    function updateUI() { var l = isLoggedIn(), a = isAdmin(); document.getElementById('btnLogin').classList.toggle('hidden', l); document.getElementById('btnRegister').classList.toggle('hidden', l); document.getElementById('btnLogout').classList.toggle('hidden', !l); document.getElementById('adminLink').classList.toggle('hidden', !a); var b = document.getElementById('userBadge'); if (l) { b.classList.remove('hidden'); b.textContent = '👤 ' + DB.currentUser().name; } else { b.classList.add('hidden'); b.textContent = ''; } }
 
-        function registerSocial(provider, email, name) {
-            if (!email || !name) { toast('❌ Infos incomplètes', 'error'); return; }
-            var users = DB.users();
-            var user = users.find(function(u) { return u.email === email; });
-            if (!user) { user = { id: 'u' + Date.now(), name: name, email: email, provider: provider, createdAt: new Date()
-                        .toISOString() };
-                users.push(user);
-                DB.saveUsers(users); }
-            DB.saveCurrentUser(user);
-            updateUI();
-            toast('✅ Connecté !');
-            showSection('profile');
-        }
+    // ============ AUTH ============
+    function registerEmail(n, e, p, p2) { if (p !== p2) { toast(I18N.t('toast.passMatch'), 'error'); return; } if (p.length < 6) { toast('❌ 6 caractères minimum', 'error'); return; } if (DB.users().find(function(u) { return u.email === e; })) { toast(I18N.t('toast.emailUsed'), 'error'); return; } var u = { id: 'u' + Date.now(), name: n, email: e, password: p, provider: 'email', createdAt: new Date().toISOString() }; var us = DB.users(); us.push(u); DB.saveUsers(us); DB.saveCurrentUser(u); updateUI(); toast(I18N.t('toast.regOk')); showSection('profile'); }
 
-        function showLogin() {
-            var email = prompt('📧 Email :');
-            if (!email) return;
-            var pass = prompt('🔑 Mot de passe :');
-            if (!pass) return;
-            if (DB.admins().indexOf(email) !== -1 && pass === '123') {
-                var users = DB.users();
-                var au = users.find(function(u) { return u.email === email; });
-                if (!au) { au = { id: 'admin', name: 'Administrateur', email: email, password: '123', provider: 'email',
-                        status: 'admin', profileComplete: true, createdAt: new Date().toISOString() };
-                    users.push(au);
-                    DB.saveUsers(users); }
-                DB.saveCurrentUser(au);
-                updateUI();
-                toast('✅ Admin connecté !');
-                return;
-            }
-            var user = DB.users().find(function(u) { return u.email === email && u.password === pass; });
-            if (user) { DB.saveCurrentUser(user);
-                updateUI();
-                toast('✅ Connecté !'); } else toast('❌ Identifiants incorrects', 'error');
-        }
+    function registerSocial(pr, e, n) { if (!e || !n) { toast('❌ Infos incomplètes', 'error'); return; } var us = DB.users(); var u = us.find(function(x) { return x.email === e; }); if (!u) { u = { id: 'u' + Date.now(), name: n, email: e, provider: pr, createdAt: new Date().toISOString() }; us.push(u); DB.saveUsers(us); } DB.saveCurrentUser(u); updateUI(); toast(I18N.t('toast.loginOk')); showSection('profile'); }
 
-        function logout() { DB.logout();
-            updateUI();
-            toast('👋 Déconnecté');
-            showSection('home'); }
+    function showLogin() { var e = prompt('📧 Email :'); if (!e) return; var p = prompt('🔑 Mot de passe :'); if (!p) return; if (DB.admins().indexOf(e) !== -1 && p === '123') { var us = DB.users(); var au = us.find(function(u) { return u.email === e; }); if (!au) { au = { id: 'admin', name: 'Administrateur', email: e, password: '123', provider: 'email', status: 'admin', profileComplete: true, createdAt: new Date().toISOString() }; us.push(au); DB.saveUsers(us); } DB.saveCurrentUser(au); updateUI(); toast('✅ Admin connecté !'); return; } var u = DB.users().find(function(x) { return x.email === e && x.password === p; }); if (u) { DB.saveCurrentUser(u); updateUI(); toast(I18N.t('toast.loginOk')); } else toast(I18N.t('toast.loginErr'), 'error'); }
 
-        function registerGoogle() { window.open('https://accounts.google.com/signin', 'ga', 'width=500,height=600');
-            toast('🔄 Connectez-vous Google'); setTimeout(function() { var n = prompt('Nom complet :'); var e = prompt(
-                'Email Google :');
-                registerSocial('google', e, n); }, 2000); }
+    function logout() { DB.logout(); updateUI(); toast(I18N.t('toast.logoutOk')); showSection('home'); }
 
-        function registerFacebook() { window.open('https://facebook.com/login', 'fa', 'width=500,height=600');
-            toast('🔄 Connectez-vous Facebook'); setTimeout(function() { var n = prompt('Nom complet :'); var e = prompt(
-                'Email Facebook :');
-                registerSocial('facebook', e, n); }, 2000); }
+    function registerGoogle() { window.open('https://accounts.google.com/signin', 'ga', 'width=500,height=600'); toast('🔄 Connectez-vous Google'); setTimeout(function() { var n = prompt('👤 Nom complet :'); var e = prompt('📧 Email Google :'); registerSocial('google', e, n); }, 2000); }
 
-        function registerPhone() { var p = prompt('📱 Téléphone (+33) :'); if (!p) return; var n = prompt(
-            'Nom complet :');
-            registerSocial('phone', p, n); }
+    function registerFacebook() { window.open('https://facebook.com/login', 'fa', 'width=500,height=600'); toast('🔄 Connectez-vous Facebook'); setTimeout(function() { var n = prompt('👤 Nom complet :'); var e = prompt('📧 Email Facebook :'); registerSocial('facebook', e, n); }, 2000); }
 
-        function saveProfile(s, c, l) { var u = DB.currentUser(); if (!u) return;
-            u.status = s;
-            u.city = c;
-            u.legalStatus = l;
-            u.profileComplete = true; var us = DB.users(); var i = us.findIndex(function(x) { return x.id === u.id; }); if (
-                i >= 0) us[i] = u;
-            DB.saveUsers(us);
-            DB.saveCurrentUser(u);
-            updateUI();
-            toast('✅ Profil enregistré !');
-            showSection('jobs'); }
+    function registerPhone() { var p = prompt('📱 Téléphone (+33) :'); if (!p) return; var n = prompt('👤 Nom complet :'); registerSocial('phone', p, n); }
 
-        // ============ RENDER ============
-        function renderJobs() {
-            var c = document.getElementById('jobsList');
-            if (!c) return;
-            var j = DB.jobs();
-            var cf = document.getElementById('jobCity').value;
-            var kf = document.getElementById('jobContract').value;
-            var sf = document.getElementById('jobSearch').value.toLowerCase();
-            if (cf) j = j.filter(function(x) { return x.city === cf; });
-            if (kf) j = j.filter(function(x) { return x.contract === kf; });
-            if (sf) j = j.filter(function(x) { return x.title.toLowerCase().indexOf(sf) !== -1; });
-            if (!j.length) { c.innerHTML = '<p class="loading">Aucune offre.</p>'; return; }
-            c.innerHTML = j.map(function(x) { return '<div class="job-card"><h4>' + x.title +
-                    '</h4><span class="badge badge-blue">📍 ' + x.city + '</span> <span class="badge badge-green">📄 ' + x
-                    .contract + '</span><p style="margin:.4rem 0;font-size:.85rem;">' + (x.desc || '') +
-                    '</p><small>Publié le ' + x.date +
-                    '</small><br><button class="btn btn-primary btn-sm" style="margin-top:.4rem;" onclick="applyJob(' + x
-                    .id + ')">Postuler</button></div>'; }).join('');
-            populateCities(); }
+    function saveProfile(s, c, l) { var u = DB.currentUser(); if (!u) return; u.status = s; u.city = c; u.legalStatus = l; u.profileComplete = true; var us = DB.users(); var i = us.findIndex(function(x) { return x.id === u.id; }); if (i >= 0) us[i] = u; DB.saveUsers(us); DB.saveCurrentUser(u); updateUI(); toast(I18N.t('toast.profOk')); showSection('jobs'); }
 
-        function renderVideos() { var c = document.getElementById('videosList'); if (!c) return; var v = DB.videos(); if (!v
-                .length) { c.innerHTML = '<p class="loading">Aucune vidéo.</p>'; return; }
-            c.innerHTML = v.map(function(x) { return '<div class="card" onclick="toast(\'🎬 ' + x.title +
-                    '\')"><i class="fas fa-play-circle" style="font-size:2rem;color:#764ba2;"></i><h4>' + x.title +
-                    '</h4><span class="badge badge-blue">' + x.cat + '</span> <span class="badge badge-green">🌐 ' + x.lang
-                    .toUpperCase() + '</span></div>'; }).join(''); }
+    // ============ RENDER ============
+    function renderJobs() { var c = document.getElementById('jobsList'); if (!c) return; var j = DB.jobs(); var cf = document.getElementById('jobCity').value; var kf = document.getElementById('jobContract').value; var sf = document.getElementById('jobSearch').value.toLowerCase(); if (cf) j = j.filter(function(x) { return x.city === cf; }); if (kf) j = j.filter(function(x) { return x.contract === kf; }); if (sf) j = j.filter(function(x) { return x.title.toLowerCase().indexOf(sf) !== -1; }); if (!j.length) { c.innerHTML = '<p class="loading">' + I18N.t('jobs.noResults') + '</p>'; return; } c.innerHTML = j.map(function(x) { return '<div class="job-card"><h4>' + x.title + '</h4><span class="badge badge-blue">📍 ' + x.city + '</span> <span class="badge badge-green">📄 ' + x.contract + '</span><p style="margin:.4rem 0;font-size:.85rem;">' + (x.desc || '') + '</p><small>' + I18N.t('jobs.published') + ' : ' + x.date + '</small><br><button class="btn btn-primary btn-sm" style="margin-top:.4rem;" onclick="applyJob(' + x.id + ')">' + I18N.t('jobs.apply') + '</button></div>'; }).join(''); populateCities(); }
 
-        function renderPosters() { var c = document.getElementById('postersList'); if (!c) return; var p = DB.posters();
-            c.innerHTML = p.map(function(x) { return '<div class="card" onclick="toast(\'🖼️ ' + x.title +
-                    '\')"><i class="fas fa-image" style="font-size:2rem;color:#f5576c;"></i><h4>' + x.title +
-                    '</h4><span class="badge badge-blue">' + x.topic + '</span></div>'; }).join(''); }
+    function renderVideos() { var c = document.getElementById('videosList'); if (!c) return; var v = DB.videos(); if (!v.length) { c.innerHTML = '<p class="loading">' + I18N.t('vid.noVideos') + '</p>'; return; } c.innerHTML = v.map(function(x) { return '<div class="card" onclick="toast(\'🎬 ' + x.title + '\')"><i class="fas fa-play-circle" style="font-size:2rem;color:#764ba2;"></i><h4>' + x.title + '</h4><span class="badge badge-blue">' + x.cat + '</span> <span class="badge badge-green">🌐 ' + x.lang.toUpperCase() + '</span></div>'; }).join(''); }
 
-        function renderVolunteering() { var d = [{ org: 'Restos du Cœur', city: 'paris',
-                task: 'Distribution alimentaire' }, { org: 'La Cimade', city: 'lyon',
-                task: 'Accompagnement juridique' }, { org: 'Secours Populaire', city: 'marseille',
-                task: 'Aide aux réfugiés' }];
-            document.getElementById('volList').innerHTML = d.map(function(v) { return '<div class="job-card" style="border-left-color:var(--s)"><h4>' +
-                    v.org + '</h4><span class="badge badge-blue">📍 ' + v.city +
-                    '</span><p style="margin:.4rem 0;font-size:.85rem;">' + v.task +
-                    '</p><button class="btn btn-outline btn-sm" style="border-color:var(--s);color:var(--s)" onclick="volSign(\'' +
-                    v.org + '\')">Devenir bénévole</button></div>'; }).join(''); }
+    function renderPosters() { var c = document.getElementById('postersList'); if (!c) return; var p = DB.posters(); c.innerHTML = p.map(function(x) { return '<div class="card" onclick="toast(\'🖼️ ' + x.title + '\')"><i class="fas fa-image" style="font-size:2rem;color:#f5576c;"></i><h4>' + x.title + '</h4><span class="badge badge-blue">' + x.topic + '</span></div>'; }).join(''); }
 
-        function populateCities() { var s = document.getElementById('jobCity'); if (!s) return; var cs = DB.jobs().map(
-            function(j) { return j.city; }); var uc = [];
-            for (var i = 0; i < cs.length; i++) { if (uc.indexOf(cs[i]) === -1) uc.push(cs[i]); }
-            s.innerHTML = '<option value="">Toutes villes</option>' + uc.map(function(c) { return '<option value="' + c +
-                    '">' + c.charAt(0).toUpperCase() + c.slice(1) + '</option>'; }).join(''); }
+    function renderVolunteering() { var d = [{ org: 'Restos du Cœur', city: 'paris', task: 'Distribution alimentaire' }, { org: 'La Cimade', city: 'lyon', task: 'Accompagnement juridique' }, { org: 'Secours Populaire', city: 'marseille', task: 'Aide aux réfugiés' }]; document.getElementById('volList').innerHTML = d.map(function(v) { return '<div class="job-card" style="border-left-color:var(--s)"><h4>' + v.org + '</h4><span class="badge badge-blue">📍 ' + v.city + '</span><p style="margin:.4rem 0;font-size:.85rem;">' + v.task + '</p><button class="btn btn-outline btn-sm" style="border-color:var(--s);color:var(--s)" onclick="volSign(\'' + v.org + '\')">' + I18N.t('vol.btn') + '</button></div>'; }).join(''); }
 
-        function applyJob(id) { if (!isLoggedIn()) { toast('⚠️ Connectez-vous', 'warning');
-                showSection('register'); return; } if (!DB.currentUser().profileComplete) { toast(
-                    '⚠️ Complétez votre profil', 'warning');
-                showSection('profile'); return; } var j = DB.jobs().find(function(x) { return x.id === id; }); if (j) toast(
-                    '✅ Candidature : ' + j.title); }
+    function populateCities() { var s = document.getElementById('jobCity'); if (!s) return; var cs = DB.jobs().map(function(j) { return j.city; }); var uc = []; for (var i = 0; i < cs.length; i++) { if (uc.indexOf(cs[i]) === -1) uc.push(cs[i]); } s.innerHTML = '<option value="">' + I18N.t('jobs.allCities') + '</option>' + uc.map(function(c) { return '<option value="' + c + '">' + c.charAt(0).toUpperCase() + c.slice(1) + '</option>'; }).join(''); }
 
-        function volSign(o) { if (!isLoggedIn()) { toast('⚠️ Connectez-vous', 'warning');
-                showSection('register'); return; }
-            toast('✅ Bénévole : ' + o); }
+    function applyJob(id) { if (!isLoggedIn()) { toast(I18N.t('toast.loginReq'), 'warning'); showSection('register'); return; } if (!DB.currentUser().profileComplete) { toast(I18N.t('toast.profReq'), 'warning'); showSection('profile'); return; } var j = DB.jobs().find(function(x) { return x.id === id; }); if (j) toast(I18N.t('toast.applyOk') + j.title); }
 
-        function renderAll() { renderJobs();
-            renderVideos();
-            renderPosters();
-            renderVolunteering(); }
+    function volSign(o) { if (!isLoggedIn()) { toast(I18N.t('toast.loginReq'), 'warning'); showSection('register'); return; } toast(I18N.t('toast.volunteerOk') + o); }
 
-        // ============ ADMIN ============
-        function renderAdmin(tab) {
-            var c = document.getElementById('adminContent');
-            if (!c) return;
-            var us = DB.users(),
-                js = DB.jobs(),
-                vs = DB.videos(),
-                ps = DB.posters(),
-                ads = DB.admins();
-            if (tab === 'dashboard') c.innerHTML = '<div class="stat-grid">' + ['Utilisateurs', 'Offres', 'Vidéos',
-                'Affiches'
-            ].map(function(l, i) { return '<div class="card"><div class="stat-num">' + [us.length, js.length, vs
-                    .length, ps.length
-                ][i] + '</div><div style="font-size:.8rem;color:#999;">' + l + '</div></div>'; }).join('') + '</div>';
-            else if (tab === 'users') c.innerHTML = '<table><tr><th>Nom</th><th>Email</th><th>Action</th></tr>' + us.map(
-                function(u) { return '<tr><td>' + u.name + '</td><td>' + u.email +
-                    '</td><td><button class="btn btn-danger btn-sm" onclick="delU(\'' + u.id +
-                    '\')">🗑️</button></td></tr>'; }).join('') + '</table>';
-            else if (tab === 'jobs-manage') c.innerHTML =
-                '<button class="btn btn-primary btn-sm" onclick="addJ()" style="margin-bottom:.75rem;">+ Ajouter</button><table><tr><th>Titre</th><th>Ville</th><th>Action</th></tr>' +
-                js.map(function(j) { return '<tr><td>' + j.title + '</td><td>' + j.city +
-                    '</td><td><button class="btn btn-danger btn-sm" onclick="delJ(' + j.id +
-                    ')">🗑️</button></td></tr>'; }).join('') + '</table>';
-            else if (tab === 'videos-manage') c.innerHTML =
-                '<button class="btn btn-primary btn-sm" onclick="addV()" style="margin-bottom:.75rem;">+ Ajouter</button><table><tr><th>Titre</th><th>Cat</th><th>Action</th></tr>' +
-                vs.map(function(v) { return '<tr><td>' + v.title + '</td><td>' + v.cat +
-                    '</td><td><button class="btn btn-danger btn-sm" onclick="delV(' + v.id +
-                    ')">🗑️</button></td></tr>'; }).join('') + '</table>';
-            else if (tab === 'posters-manage') c.innerHTML =
-                '<button class="btn btn-primary btn-sm" onclick="addP()" style="margin-bottom:.75rem;">+ Ajouter</button><table><tr><th>Titre</th><th>Sujet</th><th>Action</th></tr>' +
-                ps.map(function(p) { return '<tr><td>' + p.title + '</td><td>' + p.topic +
-                    '</td><td><button class="btn btn-danger btn-sm" onclick="delP(' + p.id +
-                    ')">🗑️</button></td></tr>'; }).join('') + '</table>';
-            else if (tab === 'admins') c.innerHTML =
-                '<button class="btn btn-primary btn-sm" onclick="addA()" style="margin-bottom:.75rem;">+ Ajouter admin</button><table><tr><th>Email</th><th>Action</th></tr>' +
-                ads.map(function(a) { return '<tr><td>' + a + '</td><td>' + (a !== 'mosab649@gmail.com' ?
-                    '<button class="btn btn-danger btn-sm" onclick="remA(\'' + a + '\')">🗑️</button>' :
-                    '<span class="badge badge-blue">Principal</span>') + '</td></tr>'; }).join('') + '</table>';
-        }
+    function renderAll() { renderJobs(); renderVideos(); renderPosters(); renderVolunteering(); }
 
-        function delU(id) { if (!confirm('Supprimer ?')) return;
-            DB.saveUsers(DB.users().filter(function(u) { return u.id !== id; }));
-            renderAdmin('users');
-            toast('🗑️ Supprimé'); }
+    // ============ ADMIN ============
+    function renderAdmin(tab) { var c = document.getElementById('adminContent'); if (!c) return; var us = DB.users(), js = DB.jobs(), vs = DB.videos(), ps = DB.posters(), ads = DB.admins(); if (tab === 'dashboard') c.innerHTML = '<div class="stat-grid">' + [{ l: I18N.t('admin.users'), n: us.length }, { l: I18N.t('admin.jobs'), n: js.length }, { l: I18N.t('admin.videos'), n: vs.length }, { l: I18N.t('admin.posters'), n: ps.length }].map(function(s) { return '<div class="card"><div class="stat-num">' + s.n + '</div><div style="font-size:.8rem;color:#999;">' + s.l + '</div></div>'; }).join('') + '</div>'; else if (tab === 'users') c.innerHTML = '<table><tr><th>Nom</th><th>Email</th><th>Action</th></tr>' + us.map(function(u) { return '<tr><td>' + u.name + '</td><td>' + u.email + '</td><td><button class="btn btn-danger btn-sm" onclick="delU(\'' + u.id + '\')">🗑️</button></td></tr>'; }).join('') + '</table>'; else if (tab === 'jobs-manage') c.innerHTML = '<button class="btn btn-primary btn-sm" onclick="addJ()" style="margin-bottom:.75rem;">+ ' + I18N.t('admin.jobs') + '</button><table><tr><th>Titre</th><th>Ville</th><th>Action</th></tr>' + js.map(function(j) { return '<tr><td>' + j.title + '</td><td>' + j.city + '</td><td><button class="btn btn-danger btn-sm" onclick="delJ(' + j.id + ')">🗑️</button></td></tr>'; }).join('') + '</table>'; else if (tab === 'videos-manage') c.innerHTML = '<button class="btn btn-primary btn-sm" onclick="addV()" style="margin-bottom:.75rem;">+ ' + I18N.t('admin.videos') + '</button><table><tr><th>Titre</th><th>Cat</th><th>Action</th></tr>' + vs.map(function(v) { return '<tr><td>' + v.title + '</td><td>' + v.cat + '</td><td><button class="btn btn-danger btn-sm" onclick="delV(' + v.id + ')">🗑️</button></td></tr>'; }).join('') + '</table>'; else if (tab === 'posters-manage') c.innerHTML = '<button class="btn btn-primary btn-sm" onclick="addP()" style="margin-bottom:.75rem;">+ ' + I18N.t('admin.posters') + '</button><table><tr><th>Titre</th><th>Sujet</th><th>Action</th></tr>' + ps.map(function(p) { return '<tr><td>' + p.title + '</td><td>' + p.topic + '</td><td><button class="btn btn-danger btn-sm" onclick="delP(' + p.id + ')">🗑️</button></td></tr>'; }).join('') + '</table>'; else if (tab === 'admins') c.innerHTML = '<button class="btn btn-primary btn-sm" onclick="addA()" style="margin-bottom:.75rem;">+ ' + I18N.t('admin.admins') + '</button><table><tr><th>Email</th><th>Action</th></tr>' + ads.map(function(a) { return '<tr><td>' + a + '</td><td>' + (a !== 'mosab649@gmail.com' ? '<button class="btn btn-danger btn-sm" onclick="remA(\'' + a + '\')">🗑️</button>' : '<span class="badge badge-blue">Principal</span>') + '</td></tr>'; }).join('') + '</table>'; }
 
-        function delJ(id) { DB.saveJobs(DB.jobs().filter(function(j) { return j.id !== id; }));
-            renderAdmin('jobs-manage');
-            renderJobs();
-            toast('🗑️ Offre supprimée'); }
+    function delU(id) { if (!confirm('Supprimer ?')) return; DB.saveUsers(DB.users().filter(function(u) { return u.id !== id; })); renderAdmin('users'); toast(I18N.t('toast.userDel')); }
+    function delJ(id) { DB.saveJobs(DB.jobs().filter(function(j) { return j.id !== id; })); renderAdmin('jobs-manage'); renderJobs(); toast(I18N.t('toast.jobDel')); }
+    function delV(id) { DB.saveVideos(DB.videos().filter(function(v) { return v.id !== id; })); renderAdmin('videos-manage'); renderVideos(); toast(I18N.t('toast.vidDel')); }
+    function delP(id) { DB.savePosters(DB.posters().filter(function(p) { return p.id !== id; })); renderAdmin('posters-manage'); renderPosters(); toast(I18N.t('toast.postDel')); }
+    function addJ() { var t = prompt('Titre :'); if (!t) return; var c = prompt('Ville :'); if (!c) return; var k = prompt('Contrat :') || 'CDI'; var d = prompt('Description :') || ''; var js = DB.jobs(); js.push({ id: Date.now(), title: t, city: c.toLowerCase(), contract: k, desc: d, date: new Date().toISOString().split('T')[0] }); DB.saveJobs(js); renderAdmin('jobs-manage'); renderJobs(); toast(I18N.t('toast.jobAdd')); }
+    function addV() { var t = prompt('Titre :'); if (!t) return; var c = prompt('Catégorie :') || 'Emploi'; var l = prompt('Langue (fr/en/ar) :') || 'fr'; var vs = DB.videos(); vs.push({ id: Date.now(), title: t, cat: c, lang: l }); DB.saveVideos(vs); renderAdmin('videos-manage'); renderVideos(); toast(I18N.t('toast.vidAdd')); }
+    function addP() { var t = prompt('Titre :'); if (!t) return; var tp = prompt('Sujet :') || 'Droits'; var ps = DB.posters(); ps.push({ id: Date.now(), title: t, topic: tp }); DB.savePosters(ps); renderAdmin('posters-manage'); renderPosters(); toast(I18N.t('toast.postAdd')); }
+    function addA() { var e = prompt('Email admin :'); if (!e) return; var a = DB.admins(); if (a.indexOf(e) !== -1) { toast('⚠️ Déjà admin', 'warning'); return; } a.push(e); DB.saveAdmins(a); renderAdmin('admins'); toast(I18N.t('toast.adminAdd')); }
+    function remA(e) { if (e === 'mosab649@gmail.com') { toast('⚠️ Protégé', 'warning'); return; } DB.saveAdmins(DB.admins().filter(function(a) { return a !== e; })); renderAdmin('admins'); toast(I18N.t('toast.adminRem')); }
 
-        function delV(id) { DB.saveVideos(DB.videos().filter(function(v) { return v.id !== id; }));
-            renderAdmin('videos-manage');
-            renderVideos();
-            toast('🗑️ Vidéo supprimée'); }
-
-        function delP(id) { DB.savePosters(DB.posters().filter(function(p) { return p.id !== id; }));
-            renderAdmin('posters-manage');
-            renderPosters();
-            toast('🗑️ Affiche supprimée'); }
-
-        function addJ() { var t = prompt('Titre :'); if (!t) return; var c = prompt('Ville :'); if (!c) return; var k =
-                prompt('Contrat :') || 'CDI'; var d = prompt('Description :') || ''; var js = DB.jobs();
-            js.push({ id: Date.now(), title: t, city: c.toLowerCase(), contract: k, desc: d, date: new Date().toISOString()
-                    .split('T')[0] });
-            DB.saveJobs(js);
-            renderAdmin('jobs-manage');
-            renderJobs();
-            toast('✅ Offre ajoutée'); }
-
-        function addV() { var t = prompt('Titre :'); if (!t) return; var c = prompt('Catégorie :') || 'Emploi'; var l =
-                prompt('Langue (fr/en/ar) :') || 'fr'; var vs = DB.videos();
-            vs.push({ id: Date.now(), title: t, cat: c, lang: l });
-            DB.saveVideos(vs);
-            renderAdmin('videos-manage');
-            renderVideos();
-            toast('✅ Vidéo ajoutée'); }
-
-        function addP() { var t = prompt('Titre :'); if (!t) return; var tp = prompt('Sujet :') || 'Droits'; var ps = DB
-                .posters();
-            ps.push({ id: Date.now(), title: t, topic: tp });
-            DB.savePosters(ps);
-            renderAdmin('posters-manage');
-            renderPosters();
-            toast('✅ Affiche ajoutée'); }
-
-        function addA() { var e = prompt('Email admin :'); if (!e) return; var a = DB.admins(); if (a.indexOf(e) !== -1) { toast(
-                '⚠️ Déjà admin', 'warning'); return; }
-            a.push(e);
-            DB.saveAdmins(a);
-            renderAdmin('admins');
-            toast('✅ Admin ajouté'); }
-
-        function remA(e) { if (e === 'mosab649@gmail.com') { toast('⚠️ Protégé', 'warning'); return; }
-            DB.saveAdmins(DB.admins().filter(function(a) { return a !== e; }));
-            renderAdmin('admins');
-            toast('🗑️ Admin supprimé'); }
-
-        // ============ INIT ============
-        function init() {
-            DB.initData();
-            updateUI();
-            renderAll();
-            document.getElementById('langSwitch').addEventListener('change', function() { document.body.classList
-                    .toggle('rtl', this.value === 'ar');
-                toast('🌐 Langue changée'); });
-            document.getElementById('navToggle').addEventListener('click', function() { document.getElementById(
-                'navMenu').classList.toggle('open'); });
-            document.getElementById('btnLogin').addEventListener('click', showLogin);
-            document.getElementById('btnRegister').addEventListener('click', function() { showSection('register'); });
-            document.getElementById('btnLogout').addEventListener('click', logout);
-            document.getElementById('formRegister').addEventListener('submit', function(e) { e.preventDefault();
-                registerEmail(document.getElementById('regName').value, document.getElementById('regEmail').value,
-                    document.getElementById('regPass').value, document.getElementById('regPass2').value); });
-            document.getElementById('formProfile').addEventListener('submit', function(e) { e.preventDefault();
-                saveProfile(document.getElementById('profStatus').value, document.getElementById('profCity').value,
-                    document.getElementById('profLegal').value); });
-            document.getElementById('jobSearch').addEventListener('input', renderJobs);
-            document.getElementById('jobCity').addEventListener('change', renderJobs);
-            document.getElementById('jobContract').addEventListener('change', renderJobs);
-            document.querySelectorAll('.nav-links a').forEach(function(a) { a.addEventListener('click', function(e) { e
-                    .preventDefault(); var id = this.getAttribute('href').replace('#', ''); if (id === 'admin' && !
-                    isAdmin()) { toast('⚠️ Accès réservé admin', 'warning'); return; }
-                showSection(id); if (id === 'admin') renderAdmin('dashboard'); }); });
-            document.querySelectorAll('.admin-tab').forEach(function(t) { t.addEventListener('click', function() { document
-                    .querySelectorAll('.admin-tab').forEach(function(x) { x.classList.remove('active'); });
-                this.classList.add('active');
-                renderAdmin(this.getAttribute('data-tab')); }); });
-            if (isLoggedIn()) { document.getElementById('register').classList.add('hidden');
-                document.getElementById('profile').classList.add('hidden'); }
-            console.log('✅ Nouvel horizon d\'emploi - Prêt');
-            console.log('👤 Admin : mosab649@gmail.com / 123');
-        }
-        document.addEventListener('DOMContentLoaded', init);
+    // ============ INIT ============
+    function init() {
+        DB.initData();
+        I18N.apply();
+        updateUI();
+        renderAll();
+        document.getElementById('langSwitch').addEventListener('change', function() { I18N.switchLang(this.value); });
+        document.getElementById('navToggle').addEventListener('click', function() { document.getElementById('navMenu').classList.toggle('open'); });
+        document.getElementById('btnLogin').addEventListener('click', showLogin);
+        document.getElementById('btnRegister').addEventListener('click', function() { showSection('register'); });
+        document.getElementById('btnLogout').addEventListener('click', logout);
+        document.getElementById('formRegister').addEventListener('submit', function(e) { e.preventDefault(); registerEmail(document.getElementById('regName').value, document.getElementById('regEmail').value, document.getElementById('regPass').value, document.getElementById('regPass2').value); });
+        document.getElementById('formProfile').addEventListener('submit', function(e) { e.preventDefault(); saveProfile(document.getElementById('profStatus').value, document.getElementById('profCity').value, document.getElementById('profLegal').value); });
+        document.getElementById('jobSearch').addEventListener('input', renderJobs);
+        document.getElementById('jobCity').addEventListener('change', renderJobs);
+        document.getElementById('jobContract').addEventListener('change', renderJobs);
+        document.querySelectorAll('.nav-links a').forEach(function(a) { a.addEventListener('click', function(e) { e.preventDefault(); var id = this.getAttribute('href').replace('#', ''); if (id === 'admin' && !isAdmin()) { toast(I18N.t('toast.adminOnly'), 'warning'); return; } showSection(id); if (id === 'admin') renderAdmin('dashboard'); }); });
+        document.querySelectorAll('.admin-tab').forEach(function(t) { t.addEventListener('click', function() { document.querySelectorAll('.admin-tab').forEach(function(x) { x.classList.remove('active'); }); this.classList.add('active'); renderAdmin(this.getAttribute('data-tab')); }); });
+        if (isLoggedIn()) { document.getElementById('register').classList.add('hidden'); document.getElementById('profile').classList.add('hidden'); }
+        console.log('✅ Nouvel horizon d\'emploi - Prêt avec i18n complète');
+        console.log('👤 Admin : mosab649@gmail.com / 123');
+    }
+    document.addEventListener('DOMContentLoaded', init);
     </script>
 </body>
 </html>
